@@ -36,7 +36,7 @@
 
 #### 总览GIF
 
-![GIF](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/GIF%202020-12-18%2012-11-13.gif)
+![GIF](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/gif-show.gif)
 
 #### 获取定位权限
 
