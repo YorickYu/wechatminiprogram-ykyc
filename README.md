@@ -36,7 +36,7 @@
 
 #### 总览GIF
 
-![](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/GIF%202020-12-18%2012-11-13.gif)
+![GIF](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/GIF%202020-12-18%2012-11-13.gif)
 
 #### 获取定位权限
 
@@ -44,13 +44,13 @@
 
 封装 `components/modelview-loau` 组件
 
-![](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/7ccffa68ebeea456a17d1079fb5d7c3.png)
+![location](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/7ccffa68ebeea456a17d1079fb5d7c3.png)
 
 #### 新用户引导
 
-![](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/a6ac85421a5b1d529a12812da5b3770.png)
+![guide1](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/a6ac85421a5b1d529a12812da5b3770.png)
 
-![](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/9b6b0de6dcde3241c626f0bbbeef82c.png)
+![guide2](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/9b6b0de6dcde3241c626f0bbbeef82c.png)
 
 上面两个模块，mask遮盖层覆盖全屏幕的问题。
 
@@ -68,9 +68,7 @@
 
 #### 错误页面
 
-
-
-![](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/error-page.png)
+![error](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/error-page.png)
 
 #### 授权页面/弹窗
 
@@ -78,7 +76,7 @@
 
 封装 `components/authorize-home` 组件（页面）
 
-![](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/5ed08e040700953d77e339643bec922.png)
+![authorize](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/5ed08e040700953d77e339643bec922.png)
 
 #### 其他
 
