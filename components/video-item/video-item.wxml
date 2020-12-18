@@ -1,0 +1,13 @@
+
+<view class='video-container'>
+  <block>
+    <image class="backgroundimg def" wx:if='{{!loadingSuccess}}' src='/images/video-background.png' mode='aspectFill' ></image>
+    <image class="backgroundimg" src='{{content}}' mode='aspectFill' lazy-load bindload='onLoadSuccess' binderror='onLoadFail'></image>
+  </block>
+
+  <image class="play" src='../../images/play.png'></image>
+  <image wx:if="{{watched}}" class="watched" src='../../images/watchtag.png'></image>
+  <view class="play-times">{{times}}次播放</view>
+</view>
+
+  

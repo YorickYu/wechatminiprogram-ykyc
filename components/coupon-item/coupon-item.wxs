@@ -1,0 +1,72 @@
+
+var textcolor = function (enable, type) {
+  if (enable) {
+    switch (type) {
+      case 1:
+        return '#385e69';
+        break;
+      case 2:
+        return '#946b91';
+        break;
+      case 3:
+        return '#7e6e98'
+        break;
+    }
+  } else {
+    return '#8f8f8f'
+  }
+}
+
+var imagesrc = function (enable, type, nocan) {
+  if (enable && !nocan) {
+    switch (type) {
+      case 1:
+        return '/images/coupon/exchange-background.png';
+        break;
+      case 2:
+        return '/images/coupon/offset-background.png';
+        break;
+      case 3:
+        return '/images/coupon/discount-background.png'
+        break;
+    }
+  } else {
+    return '/images/coupon/disable-background.png'
+  }
+}
+
+var leftcontent = function (type, content) {
+  switch (type) {
+    case 1:
+      return content;
+      break;
+    case 2:
+      return '¥' + content;
+      break;
+    case 3:
+      return content + '折';
+      break;
+  }
+}
+
+var title = function (type) {
+  switch (type) {
+    case 1:
+      return "通兑券";
+      break;
+    case 2:
+      return "抵值券";
+      break;
+    case 3:
+      return "折扣券";
+      break;
+  }
+}
+
+
+module.exports = {
+  textcolor: textcolor,
+  imagesrc: imagesrc,
+  leftcontent: leftcontent,
+  title: title
+}

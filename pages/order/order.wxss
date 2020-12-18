@@ -1,0 +1,159 @@
+page {
+  background-color: #f8f8f8;
+  height: 100%;
+  width: 100%;
+}
+
+/* 订单切换 */
+
+.ordrswitchbar {
+  height: 120rpx;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  display: flex;
+  z-index: 10;
+}
+
+.ordrswitchbar .switchitem {
+  position: relative;
+  font-size: 34rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ordrswitchbar .switchitem.actived {
+  font-weight: bold;
+}
+
+.ordrswitchbar .switchitem image {
+  position: absolute;
+  margin-top: 40rpx;
+  width: 44rpx;
+  height: 10rpx;
+}
+
+/* 订单列表 */
+
+.order-container {
+  margin-top: 145rpx;
+  padding: 0 25rpx;
+}
+
+.order-item {
+  border-radius: 25rpx;
+  margin-top: 25rpx;
+  background-color: white;
+  padding: 0 20rpx;
+}
+
+.order-item .item-numberandstate {
+  height: 78rpx;
+  border-bottom: 0.4rpx dashed #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-item .item-numberandstate .number {
+  font-size: 28rpx;
+}
+
+.order-item .item-numberandstate .state {
+  font-size: 28rpx;
+}
+.order-item .item-numberandstate .state.finish {
+  font-size: 28rpx;
+  color: #8fbd35;
+}
+.order-item .item-numberandstate .state.unpaid {
+  font-size: 28rpx;
+  color: #bbbbbb;
+}
+.order-item .item-numberandstate .state.wait {
+  font-size: 28rpx;
+  color:  #ff4848;
+}
+.order-item .item-numberandstate .state.paid {
+  font-size: 28rpx;
+  color: #8fbd35;
+}
+.order-item .item-numberandstate .state.refunded {
+  font-size: 28rpx;
+  color: #8fbd35;
+}
+.order-item .item-numberandstate .state.failed {
+  font-size: 28rpx;
+  color: #ff4848;
+}
+.order-item .content {
+  padding: 25rpx 0;
+  display: flex;
+  flex-direction: column;
+  color: #7d7d7d;
+  font-size: 32rpx;
+  border-bottom: 0.4rpx dashed #eee;
+}
+
+.order-item .pay {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 80rpx;
+  color: white;
+}
+
+.order-item .pay .suf {
+  font-size: 30rpx;
+  height: 52rpx;
+  border-radius: 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-item .pay .tocancel {
+  background-color: #d2d2d2;
+  width: 160rpx;
+}
+
+.order-item .pay .topay {
+  background-color: #db228a;
+  margin-left: 20rpx;
+  width: 140rpx;
+}
+
+.nodata-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nodata-container text {
+  color: #979797;
+  font-size: 26rpx;
+  padding: 0 50rpx;
+  text-align: center;
+}
+
+.nodata-container image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}

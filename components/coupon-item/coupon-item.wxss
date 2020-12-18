@@ -1,0 +1,86 @@
+.container {
+    position: relative;
+    margin-top: 30rpx;
+    background-color: transparent;
+    height: 200rpx;
+    width: 690rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.backgroundimage {
+    height: 200rpx;
+    width: 690rpx;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* z-index: 5; */
+}
+
+.left-container {
+    position: relative;
+    /* z-index: 10; */
+    flex: 1;
+    height: 100%;
+    /* background-color: red; */
+}
+
+.left-container .inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-container .inner.exchange {
+    font-size: 38rpx;
+}
+
+.left-container .inner.other {
+    font-size: 56rpx;
+    font-weight: bold;
+}
+
+.right-container {
+    position: relative;
+    /* z-index: 10; */
+    flex: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 18rpx 0;
+    /* background-color: blue; */
+}
+
+.right-container text {
+    padding: 0 50rpx;
+    width: 330rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.right-container .title {
+    font-weight: bold; 
+    font-size: 35rpx;
+}
+.right-container .subtitle {
+    font-size: 26rpx;
+}
+.right-container .time {
+    font-size: 22rpx;
+}
+.right-container .durning {
+    padding-top: 18rpx;
+}
+
+.selected {
+  position: absolute;
+  width: 34rpx;
+  height: 34rpx;
+  z-index: 10;
+  right: 40rpx;
+  top: 82rpx;
+}

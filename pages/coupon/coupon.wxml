@@ -1,0 +1,66 @@
+<wxs module="m1">
+  var mate = function(val) {
+    switch (val) {
+      case 0:
+        return '折扣券';
+        break;
+      case 1:
+        return '通兑券';
+        break;
+      case 2:
+        return '抵值券';
+        break;
+    }
+  }
+  module.exports.formate = mate;
+</wxs>
+
+
+<navigation id="navigationBar" title="{{title}}" back></navigation>
+
+<!-- 切换券表 -->
+<view class='ordrswitchbar'>
+  <view class="switchitem {{currentSelected==index ? 'actived' : ''}}" wx:for="{{switchbar}}" wx:key="{{index}}" bindtap="switchaction" data-aindex="{{index}}">
+    <text>{{item}}</text>
+    <image wx:if="{{currentSelected==index}}" src="../../images/mine/active.png" />
+  </view>
+</view>
+
+<!-- 券列表 -->
+<view class="coupon-list" wx:if='{{!hasWxAuth}}'>
+  <coupon-item id="position" wx:if="{{contents.length > 0 && firstLoaded}}" wx:for="{{contents.length}}" wx:key="{{index}}" content="{{contents[index]}}" bindtap="todetail" data-content="{{contents[index]}}">
+  </coupon-item>
+  <view wx:if="{{contents.length == 0 && firstLoaded}}" class="nodata-container">
+    <image src="/images/coupon/nocoupons.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    <text selectable="false" space="false" decode="false">
+      暂无{{m1.formate(currentSelected)}}
+      </text>
+  </view>
+</view>
+
+<!-- 未登陆 -->
+<view class='code-content' wx:if='{{hasWxAuth}}'>
+  <image class='img' src="/images/home/info-auth.png"/>
+  <view class="text-container">
+    <text>登录后查看优惠券信息</text>
+  </view>
+  <view class="auth-button" bindtap="bindGetUserInfo">
+    点击登录
+  </view>
+</view>
+
+
+<!-- *************************************** -->
+
+<tel-maskview bind:returnBind="bindtelmaskviewreturn" wx:if="{{authorizetel}}"></tel-maskview>
+
+<view class='guide' wx:if='{{showGuide}}' catchtouchmove="handletouchtart">
+  <view class="top-mask guide-mask" style="height: {{borderPosition.top+16}}px"></view>
+  <image class="guide-border" src="/images/coupon/page-guide-border.png" mode="aspectFill" lazy-load="false" style="top: {{borderPosition.top}}px" bindtap="guideClick" />
+  <view class="bottom-mask guide-mask" style="top: {{borderPosition.bottom}}px"></view>
+  <image class="guide-pointer" src="/images/coupon/page-guide-pointer.png" mode="aspectFill" lazy-load="false" style="top: {{borderPosition.top+80}}px;right: 10px" />
+</view>
+
+<view class="bind-success" wx:if='{{bindsuccess}}'>
+  <text>绑定成功</text>
+</view>

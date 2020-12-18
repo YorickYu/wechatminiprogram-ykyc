@@ -1,0 +1,38 @@
+/* pages/credits-exchange-success/credits-exchange-success.wxss */
+.ces_top_top {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 380rpx;
+}
+.ces_top_top .success_img {
+  margin-top: 100rpx;
+  width: 200rpx;
+  height: 260rpx;
+}
+.ces_top_mid {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 56rpx;
+  font-weight: bold;
+}
+
+.ces-bottom {
+  margin-top: 70rpx;
+  display: flex;
+  justify-content: center;
+}
+.ces-bottom .finish {
+  margin: 20rpx;
+  background-color: rgb(211, 0, 120);
+  width: 480rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  color: white;
+  text-align: center;
+  line-height: 100rpx;
+}

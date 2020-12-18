@@ -1,0 +1,15 @@
+<view class='mask'>
+
+  <view class="content" wx:if="{{telshow}}" animation="{{animation}}">
+
+    <view class="text-container">
+      <text>获取手机授权后,</text>
+      <text>将获得xxxxxx的更多权益!</text>
+    </view>
+
+    <button class='auth-button' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+    <view class='cancelbutton' bindtap='cancel'>取消</view>
+
+  </view>
+
+</view>

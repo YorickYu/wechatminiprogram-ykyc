@@ -1,0 +1,52 @@
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 330rpx;
+    margin-top: 30rpx;
+    border-radius: 30rpx;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.video-container .play {
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    z-index: 101;
+}
+.video-container .backgroundimg {
+    position: absolute;
+    width: 100%;
+    height: 330rpx;
+    z-index: 5;
+    border-radius: 20rpx;
+}
+
+.video-container .backgroundimg .def {
+    z-index: 100;
+    width: 101%;
+    height: 331rpx;
+}
+
+
+.video-container .watched {
+  position: absolute;
+  width: 95rpx;
+  height: 95rpx;
+  right: 0rpx;
+  top: 0rpx;
+  z-index: 99;
+}
+
+.video-container .play-times {
+  background-color: rgba(1, 1, 1, 0.2);
+  color: white;
+  font-size: 24rpx;
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+  z-index: 100;
+  padding: 5rpx 14rpx;
+  border-radius: 5rpx;
+}

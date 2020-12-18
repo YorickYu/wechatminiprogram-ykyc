@@ -1,0 +1,167 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  margin: 30rpx 40rpx;
+  font-size: 42rpx;
+}
+
+.pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  height: 400rpx;
+  width: 100%;
+}
+
+.activity-img {
+  width: 90%;
+  height: 400rpx;
+  border-radius: 20rpx;
+}
+
+.timefee {
+  display: flex;
+  margin-top: 10rpx;
+  height: 60rpx;
+  width: 100%;
+}
+
+.time_img {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.time_text {
+  margin-left: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+
+.activity_time {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+  height: 100%;
+  width: 55%;
+}
+
+.activity_fee {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 35%;
+}
+
+.fee_img {
+  width: 44rpx;
+  height: 44rpx;
+  margin-left: 30rpx;
+}
+
+.fee_text {
+  margin-left: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+
+.address {
+  display: flex;
+  margin-top: 10rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.address_img {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.address_text {
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  max-width: 600rpx;
+}
+
+.activity_title {
+  display: flex;
+  height: 60rpx;
+  margin-left: 5%;
+  margin-top: 30rpx;
+}
+
+.activity_title_border {
+  position: absolute;
+  margin-top: 6rpx;
+  height: 38rpx;
+  width: 10rpx;
+  border-radius: 5rpx;
+  background-color: #df1888;
+}
+
+.activity_title_text {
+  position: absolute;
+  height: 60rpx;
+  width: 300rpx;
+  margin-left: 30rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.activity_space {
+  display: flex;
+  height: 20rpx;
+  width: 100%;
+}
+
+.activity_detail_text {
+  display: flex;
+  font-size: 30rpx;
+  line-height: 36rpx;
+  margin: 0 5% 12rpx 5%;
+  color: #7d7d7d;
+}
+
+.activity_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.button_detail {
+  width: 80%;
+  color: white;
+  background-color: #d2d2d2;
+  line-height: 90rpx;
+  font-size: 35rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  font-weight: bold;
+  margin-top: 120rpx;
+  margin-bottom: 50rpx;
+}
+
+.button_detail_aa {
+  width: 80%;
+  color: white;
+  background-color: #df1888;
+  line-height: 90rpx;
+  font-size: 35rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  font-weight: bold;
+  margin-top: 120rpx;
+  margin-bottom: 50rpx;
+}
+.button_detail_aa::after {
+  border: none;
+}
+.button_detail::after {
+  border: none;
+}

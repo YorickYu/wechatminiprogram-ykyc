@@ -1,0 +1,131 @@
+
+
+.top-container {
+  position: relative;
+
+  background-color: #f8f8f8;
+  padding: 20rpx 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-container .back-img {
+  width: 700rpx;
+  height: 682rpx;
+  z-index: 1;
+}
+
+.top-container .top-content {
+  position: absolute;
+  z-index: 2;
+  top: 32rpx;
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-content .title {
+  font-size: 38rpx;
+  color: white;
+  font-weight: bold;
+}
+
+.top-content .subtitle {
+  font-size: 28rpx;
+  color: white;
+}
+
+.top-container .bottom-content {
+  position: absolute;
+
+  width: 660rpx;
+  height: 576rpx;
+  z-index: 2;
+  /* margin: 72rpx 16rpx 16rpx 16rpx; */
+  margin-top: 26rpx;
+  /* padding-top: 40rpx; */
+  background-color: white;
+  border-radius: 20rpx;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  margin-left: 35rpx;
+}
+
+.list-item .list-icon {
+  width: 66rpx;
+  height: 66rpx;
+  padding: 20rpx;
+}
+
+.list-item .list-text {
+  font-size: 36rpx;
+  font-weight: light;
+  color: #575757;
+  max-width: 490rpx;
+
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+
+.bottom-content .purchase {
+  position: absolute;
+  margin-top: 30rpx;
+  /* bottom: 70rpx; */
+  background-color: #db2a88;
+  /* width: 530rpx; */
+  width: 85%;
+  height: 100rpx;
+
+  margin: 0 50rpx;
+  border-radius: 50rpx;
+  color: white;
+  line-height: 100rpx;
+  text-align: center;
+
+  font-size: 40rpx;
+}
+
+.bottom-content .vip-number {
+  position: absolute;
+  
+  line-height: 20rpx;
+  font-size: 20rpx;
+  color: #db2a88;
+  width: 100%;
+  text-align: center;
+}
+
+.bottom-container {
+  position: relative;
+  width: 100%;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.bottom-container text{
+  width: 100%;
+  font-size: 30rpx;
+  color: lightgray;
+  text-align: center;
+  margin: 30rpx 0;
+}
+
+.bottom-container image {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 1736rpx;
+}

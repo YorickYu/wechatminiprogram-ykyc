@@ -1,0 +1,47 @@
+<navigation id="navigationBar" title="商品详情" back>
+</navigation>
+
+<scroll-view class="container" scroll-y style="height: {{contentheight}}px;">
+
+  <view class="poster-container">
+    <image class="poster-image pos" wx:if='{{!loadingSuccess}}' src='/images/video-background.png' mode='aspectFill'></image>
+    <image class="poster-image" wx:if="{{productInfo.poster}}" src="{{productInfo.poster}}" mode="aspectFill" bindload='posterImageLoadSuccess' />
+  </view>
+
+  <view class="title-container">
+    <view class="title">{{productInfo.name}}</view>
+    <view class="points-cost">
+      <image src="/images/goods/goods-points.png" style="width:29rpx; height:31rpx;"></image>
+      <text>{{productInfo.point}}积分</text>
+    </view>
+  </view>
+
+  <view class="seperate-line"></view>
+
+  <view class="goods-detail">
+    <view class="detail_title">
+      <view class="detail_title_border"></view>
+      <text class="detail_title_text">商品说明 :</text>
+    </view>
+    <text class="detail_text" wx:for="{{expository}}" wx:key="{{index}}">{{item}}
+      </text>
+  </view>
+
+  <view class="gallery-container">
+    <view class="gallery-item" wx:for="{{gallery}}" wx:key="{{index}}">
+      <image class="goods-image pos" wx:if='{{!item.load}}' src='/images/video-background.png' mode='aspectFill'></image>
+      <image class="goods-image" wx:if="{{item.img}}" src="{{item.img}}" mode="aspectFill" bindload='productImagesLoadSuccess' data-aindex="{{index}}" />
+    </view>
+  </view>
+
+
+</scroll-view>
+
+<form report-submit="true" bindsubmit="formSubmit">
+  <view class="bottom-container">
+    <button class="bottom-detail" formType="submit">立即兑换</button>
+  </view>
+</form>
+
+<tel-maskview bind:returnBind="bindtelmaskviewreturn" wx:if="{{authorizetel}}">
+</tel-maskview>

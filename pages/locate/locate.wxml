@@ -1,0 +1,124 @@
+<navigation id="navigationBar" title="选择影院" back></navigation>
+<image class="background" mode="aspectFit|aspectFill|widthFix" src='../../images/theaterIcon/home-background.png'></image>
+<!-- 定位 & 搜索框 -->
+<view class="location">
+  <view class="city-area" bindtap='tocitylist'>
+    <view class="city">{{cityname}}</view>
+    <image class="icon" src="../../images/home/location-arrow.png" />
+  </view>
+  <view class="search-area">
+    <image class="icon" src="../../images/home/search-icon.png" />
+    <input class="search-area-text" type='text' placeholder=' 查看更多影院' placeholder-style="color:white;" confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>
+  </view>
+</view>
+<view class='view'>
+  <map style="height:{{mapTop-320}}rpx; bottom:320rpx; position:fixed;" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" scale="14" include-points="{{includeMarkers}}" show-location wx:if="{{hideModalStatus}}">
+  </map>
+</view>
+<!-- <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> -->
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view class="theater_ani" style="height: {{scroll_height}}rpx;">
+  <view class="button_up" bindtap="powerDrawer" wx:if="{{hideModalStatus}}" data-statu="open">
+    <text class="show_all_theater"> 查看所有影院</text>
+    <view class="image_jus">
+      <image class="up_icon" src="../../images/theaterIcon/up_theater.png" mode="widthFix" />
+    </view>
+  </view>
+  <view class="button_down" bindtap="powerDownDrawer" wx:if="{{showModalStatus}}" data-statu="close">
+    <text class="show_all_theater"> 返回查看地图</text>
+    <view class="image_jus">
+      <image class="up_icon" src="../../images/theaterIcon/down_theater.png" mode="widthFix" />
+    </view>
+  </view>
+
+  <scroll-view style="height: {{scroll_height-120}}rpx;" class="theater_list" wx:if="{{!showModalStatus}}">
+    <view bindtap="activeNavChosen" data-index="{{index}}" data-statu="{{chosenStatus}}" class="theater_chosen_wrap {{index===currentIndexNav?'active':''}}" wx:for="{{theaterChosenList}}" wx:key="{{index}}">
+      <view class="theaterlist_left">
+        <view class="theater_left">
+          <view class="theater_name">{{item.name}}</view>
+          <view class="theater_distance">
+            <image class="locate_icon" src="../../images/theaterIcon/locate.png" mode="widthFix"></image>
+            <text class="locate_text">距离{{item.distance}}</text>
+          </view>
+          <view class="theater_discount_property">
+            <view class="coupons" wx:if="{{item.canUserCoupon}}">优惠券</view>
+            <view class="customer_point" wx:if="{{item.addPoint}}">积分</view>
+            <view class="discount" wx:if="{{item.canUseDiscount}}">折扣</view>
+          </view>
+        </view>
+      </view>
+      <view class="theater_right">
+        <view bindtap="navCinemaPlanChosen" class="theater_navi">
+          <image class="theater_buy_img" src="../../images/theaterIcon/instant_buy.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+    <view bindtap="activeNav" data-index="{{index+1}}" class="theater_wrap  {{index+1===currentIndexNav?'active':''}}" wx:for="{{theaterList}}" wx:key="{{index}}" wx:if="{{showModalStatus}}">
+      <view class="theaterlist_left">
+        <view class="theater_left">
+          <view class="theater_name">{{item.name}}</view>
+          <view class="theater_distance">
+            <image class="locate_icon" src="../../images/theaterIcon/locate.png" mode="widthFix"></image>
+            <text class="locate_text">距离{{item.distance}}</text>
+          </view>
+          <view class="theater_discount_property">
+            <view class="coupons" wx:if="{{item.canUserCoupon}}">优惠券</view>
+            <view class="customer_point" wx:if="{{item.addPoint}}">积分</view>
+            <view class="discount" wx:if="{{item.canUseDiscount}}">折扣</view>
+          </view>
+        </view>
+      </view>
+      <view class="theater_right">
+        <view bindtap="navCinemaPlan" class="theater_navi" data-index="{{index+1}}">
+          <image class="theater_buy_img" src="../../images/theaterIcon/instant_buy.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <scroll-view style="height: {{scroll_height-120}}rpx;" class="theater_list active" wx:if="{{showModalStatus}}" scroll-y bindscrolltolower="lower">
+    <view bindtap="activeNavChosen" data-index="{{index}}" data-statu="{{chosenStatus}}" class="theater_chosen_wrap {{index===currentIndexNav?'active':''}}" wx:for="{{theaterChosenList}}" wx:key="{{index}}">
+      <view class="theaterlist_left">
+        <view class="theater_left">
+          <view class="theater_name">{{item.name}}</view>
+          <view class="theater_distance">
+            <image class="locate_icon" src="../../images/theaterIcon/locate.png" mode="widthFix"></image>
+            <text class="locate_text">距离{{item.distance}}</text>
+          </view>
+          <view class="theater_discount_property">
+            <view class="coupons" wx:if="{{item.canUserCoupon}}">优惠券</view>
+            <view class="customer_point" wx:if="{{item.addPoint}}">积分</view>
+            <view class="discount" wx:if="{{item.canUseDiscount}}">折扣</view>
+          </view>
+        </view>
+      </view>
+      <view class="theater_right">
+        <view bindtap="navCinemaPlanChosen" class="theater_navi">
+          <image class="theater_buy_img" src="../../images/theaterIcon/instant_buy.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+    <view bindtap="activeNav" data-index="{{index+1}}" class="theater_wrap  {{index+1===currentIndexNav?'active':''}}" wx:for="{{theaterList}}" wx:key="{{index}}" wx:if="{{showModalStatus}}">
+      <view class="theaterlist_left">
+        <view class="theater_left">
+          <view class="theater_name">{{item.name}}</view>
+          <view class="theater_distance">
+            <image class="locate_icon" src="../../images/theaterIcon/locate.png" mode="widthFix"></image>
+            <text class="locate_text">距离{{item.distance}}</text>
+          </view>
+          <view class="theater_discount_property">
+            <view class="coupons" wx:if="{{item.canUserCoupon}}">优惠券</view>
+            <view class="customer_point" wx:if="{{item.addPoint}}">积分</view>
+            <view class="discount" wx:if="{{item.canUseDiscount}}">折扣</view>
+          </view>
+        </view>
+      </view>
+      <view class="theater_right">
+        <view bindtap="navCinemaPlan" class="theater_navi" data-index="{{index+1}}">
+          <image class="theater_buy_img" src="../../images/theaterIcon/instant_buy.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

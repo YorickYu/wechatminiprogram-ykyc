@@ -1,0 +1,23 @@
+<!--pages/credits-exchange-success/credits-exchange-success.wxml-->
+<navigation id="navigationBar" title="兑换成功" back></navigation>
+<view class="ces_top_top">
+  <image src="../../images/voucher/gotvoucher.png" mode="widthFix" class="success_img"></image>
+</view>
+<view class="ces_top_mid">兑换成功</view>
+<view class='ces_middle'>
+  <view class='one'>
+    <text class='good_name_'>商品名称：</text>
+    <text class='good_name'>{{goodName}}</text>
+  </view>
+  <view class='two'>
+    <text class='exchange_time_'>兑换时间：</text>
+    <text class='exchange_time'>{{exchangeTime}}</text>
+  </view>
+  <view class='three'>
+    <text class='exchange_score_'>兑换积分：</text>
+    <text class='exchange_score'>{{exchangeScore}}</text>
+  </view>
+</view>
+<view class='ces-bottom'>
+  <text class='finish' bindtap='onfinish'>完成</text>
+</view>

@@ -1,0 +1,143 @@
+<!--pages/orderConfirm/orderConfirm.wxml-->
+<wxs module="m1">
+  var mate = function(val) {
+    console.log(val)
+    switch (val) {
+      case '0':
+        return '通兑券';
+        break;
+      case '1':
+        return '抵值券';
+        break;
+      case '2':
+        return '折扣券';
+        break;
+    }
+  }
+  module.exports.formate = mate;
+</wxs>
+<!-- 引入wxs，并设置module名 -->
+<wxs src="../../common.wxs" module="util" />
+<navigation id="navigationBar" title="{{title}}" customback bind:customback="back"></navigation>
+<!--倒计时-->
+<view class='body-one' hidden='{{!countDownTimeIsShow}}'>
+  <view class='countdowntime-view'>
+    <image src='../../images/orderConfirm/time.png'></image>
+    <text class='content'>剩余支付时间：</text>
+    <text>{{util.downTime(countDownTime)}}</text>
+  </view>
+</view>
+<!--影票信息-->
+<view class='body-two'>
+  <view class='row-one'>
+    <text class='movie-name'>{{movieName}}</text>
+    <text class='ticket-count'>x {{count}}张</text>
+  </view>
+  <view class='row-two'>
+    <text class='movie-time'>{{movieTime}}</text>
+    <text class='movie-type'>{{movieType}}</text>
+  </view>
+  <view class='row-three'>
+    <text class='cinema-name'>{{cinemaName}}</text>
+    <text class='hall-name'>{{hallName}}</text>
+  </view>
+  <view class='row-four'>
+    <scroll-view class='seats' scroll-x='true'>
+      <block wx:for="{{seats}}" wx:key="menu_for" style="width:100%">
+        <view class='seat' data-index="{{index}}">
+          <text>{{item}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+<!--优惠券和手机号-->
+<view class='body-three'>
+  <view class='row-one' bindtap='showCouponDialog'>
+    <text class='content'>选择优惠券</text>
+    <view class='select-coupon'>
+      <text hidden="{{selectCouponCount>0?'':'hidden'}}">已选{{selectCouponCount}}张{{selectCouponInfo}}</text>
+      <image src='../../images/mine/right-arrow.png'></image>
+    </view>
+  </view>
+  <view class='row-two'>
+    <text class='content'>手机号</text>
+    <view class='phone-view'>
+      <input class='phone' type='number' maxlength='11' placeholder='请输入手机号' placeholder-class='default-phone' value='{{phone}}' bindinput='getInput' focus="{{inputPhoned}}" disabled="{{!isChangeOrder}}"></input>
+      <image src='../../images/orderConfirm/edit.png' bindtap='clickInputPhone'></image>
+    </view>
+  </view>
+  <view class='row-three'>购票成功后，会收到取票码短信
+  </view>
+</view>
+<!--结算明细-->
+<view class='body-four'>
+  <view class='row-one'>结算明细</view>
+  <view class='row-two'>
+    <text>售价</text>
+    <text>{{util.showPrice(totalPrice)}}元</text>
+  </view>
+  <view class='row-three' wx:if="{{!discountHidden}}">
+    <text>{{discountText}}</text>
+    <text>{{discountInfo}}</text>
+  </view>
+  <view class='row-four'>
+    <text>实付金额</text>
+    <text class='real-price'>{{util.showPrice(realPrice)}}元</text>
+  </view>
+</view>
+<!--底部-->
+<view class='bottom'>
+  <view class='left'>
+    <view class='real-price'>应付：{{util.showPrice(realPrice)}}元</view>
+    <view class='service-price'>(含服务费{{util.showPrice(serviceFee)}}元/张)</view>
+  </view>
+  <view class='right' bindtap='goToPay'>
+    <text>立即支付</text>
+  </view>
+</view>
+<!--优惠券弹框-->
+<view class='coupon-mask' wx:if="{{isShowCouponDialog}}" bindtap='hideCouponDialog'></view>
+<view class='coupon-dialog bottom-pos' animation='{{animationData}}' wx:if="{{isShowCouponDialog}}">
+  <view class='top'>
+    <view class='left' bindtap='confirmCoupon'>确定</view>
+    <text class='title'>选择优惠券</text>
+    <text class='cancel' bindtap='hideCouponDialog'>取消</text>
+  </view>
+  <view class='line' />
+  <view class='body'>
+    <view class='tabs'>
+      <text class="{{tabIndex == 0?'select':'default'}}" bindtap='selectTabIndex' data-index='0'>通兑券</text>
+      <text class="{{tabIndex == 1?'select':'default'}}" bindtap='selectTabIndex' data-index='1'>抵值券</text>
+      <text class="{{tabIndex == 2?'select':'default'}}" bindtap='selectTabIndex' data-index='2'>折扣券</text>
+    </view>
+    <scroll-view wx:if="{{contents.length > 0}}" scroll-y class="coupon-list">
+      <!-- content="{{contents[index]}}" -->
+      <coupon-item wx:for="{{contents.length}}" data-index="{{index}}" wx:key="{{index}}" content="{{contents[index]}}" bindtap="clickCoupon">
+      </coupon-item>
+    </scroll-view>
+    <view wx:if="{{contents.length == 0}}" class="nodata-container">
+      <image src="/images/coupon/nocoupons.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+      <text selectable="false" space="false" decode="false">
+        暂无{{m1.formate(tabIndex)}}
+      </text>
+    </view>
+  </view>
+
+</view>
+
+<view class='od-mask' wx:if="{{ticketing}}">
+
+  <view class="od-content" >
+    <view class="od-title"> 正在出票 </view>
+
+    <view class="od-text">
+      <!-- <text class="od-subtitle">根据规则，</text> -->
+      <text>下单后，<text style="color: #de188a;">折扣券</text>在10分钟内发放</text>
+      <text class="od-subtitle">可在“我的优惠券”中查看</text>
+    </view>
+  </view>
+
+  <view class="od-exit" bindtap="orderexit">x</view>
+
+</view>

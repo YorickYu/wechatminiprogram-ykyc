@@ -1,0 +1,644 @@
+/* pages/cinemaPlan/cinemaPlan.wxss */
+
+.loading-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.loading-container text {
+  font-size: 28rpx;
+  color: #111111a6;
+  margin-top: -5rpx;
+}
+
+.topInfoView {
+  margin-top: 25rpx;
+  background: white;
+}
+
+.cinemaName {
+  margin-left: 25rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.locationImage {
+  width: 20rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  margin-top: 6rpx;
+}
+
+.cinemaAddress {
+  margin-left: 14rpx;
+  width: 600rpx;
+  font-size: 25rpx;
+}
+
+.tip {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: -50rpx;
+  margin-left: 10rpx;
+}
+
+.addressView {
+  display: flex;
+  font-size: 26rpx;
+  margin-left: 25rpx;
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 12rpx;
+}
+
+.bottomView {
+  height: 280rpx;
+}
+
+.movieView {
+  height: 280rpx;
+  background: white;
+  margin-top: 15rpx;
+}
+
+.movieSwipper {
+  height: 290rpx;
+  margin-top: -290rpx;
+  background: rgba(0, 0, 0, 0);
+}
+
+.swiperItem {
+  margin-top: 45rpx;
+  z-index: 100;
+  margin-left: 10rpx;
+}
+
+.overbottomView {
+  width: 100%;
+  height: 280rpx;
+  overflow: hidden;
+}
+
+.selectSwiperItem {
+  width: 175rpx;
+  margin-top: 30rpx;
+  z-index: 100;
+}
+
+.moviePostImage {
+  width: 150rpx;
+  height: 210rpx;
+  border-radius: 10rpx;
+}
+
+.selectPostImage {
+  border: 1rpx white solid;
+  width: 165rpx;
+  height: 231rpx;
+  border-radius: 11rpx;
+}
+
+.posterabs {
+  position: absolute;
+}
+
+.arrow_up {
+  width: 28rpx;
+  height: 15rpx;
+  position: absolute;
+  margin-top: -12rpx;
+  left: 361rpx;
+}
+
+.movieInfoView {
+  width: 100%;
+  background: white;
+}
+
+.movieName {
+  margin-top: 18rpx;
+  width: auto;
+  display: flex;
+  margin-left: 15rpx;
+  /* justify-content: center; */
+  font-size: 30rpx;
+
+  /* 定义为自适应布局    */
+  display: -webkit-box;
+  word-break: break-all;
+  /* 超出文字用省略号代替 */
+  text-overflow: ellipsis;
+  /* 多出不分隐藏 */
+  overflow: hidden; 
+  /* 竖直方向的超出和隐藏 */
+  -webkit-box-orient: vertical;
+  /* 设定行数为2 */
+  -webkit-line-clamp: 1;
+}
+
+.rightIcon {
+  margin-left: 10rpx;
+  width: 14rpx;
+  height: 28rpx;
+  margin-top: 20rpx;
+  display: none;
+}
+.placeAndMovieLen {
+  width: auto;
+  margin-left: 15rpx;
+  margin-top: 20rpx;
+  display: flex;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 26rpx;
+  /* 定义为自适应布局    */
+  display: -webkit-box;
+  word-break: break-all;
+  /* 超出文字用省略号代替 */
+  text-overflow: ellipsis;
+  padding-right: 15rpx;
+  /* 多出不分隐藏 */
+  overflow: hidden; 
+  /* 竖直方向的超出和隐藏 */
+  -webkit-box-orient: vertical;
+  /* 设定行数为2 */
+  -webkit-line-clamp: 1;
+}
+.movieType {
+  margin-top: 9rpx;
+  /* width: 100%; */
+  padding: 5rpx 15rpx;
+  display: flex;
+  background: rgba(253, 248, 229, 1);
+  font-size: 25rpx;
+  color: rgba(237, 168, 88, 1);
+}
+
+.dateScrollView {
+  height: 80rpx;
+  background: white;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.dateScrollView ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.dateView {
+  display: inline-block;
+  font-size: 28rpx;
+  margin-top: 25rpx;
+  width: 220rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selectDateView {
+  color: black;
+  font-weight: bold;
+}
+
+.defaultDateView {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.selectlineView {
+  width: 40rpx;
+  height: 6rpx;
+  text-align: center;
+  margin-left: 94rpx;
+  margin-top: 10rpx;
+  background: #de188a;
+}
+
+.defaultlineView {
+  width: 40rpx;
+  height: 6rpx;
+  text-align: center;
+  margin-left: 94rpx;
+  margin-top: 10rpx;
+  background: transparent;
+}
+
+.planScrollView {
+  height: 70%;
+  width: 100%;
+  background: white;
+}
+
+.itemView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 124rpx;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.05);
+}
+
+.itemView .time-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 25rpx;
+  width: 20%;
+  height: 100%;
+}
+
+.itemView .time-box .startTime {
+  width: 100%;
+  font-weight: 900;
+  font-size: 46rpx;
+}
+
+.itemView .time-box .endTime {
+  width: 100%;
+  font-size: 25rpx;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+.itemView .language-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 25rpx;
+  width: 25%;
+  height: 100%;
+}
+
+
+.itemView .language-box .language {
+  margin-top: 12rpx;
+  width: 100%;
+  font-size: 30rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.itemView .language-box .hallName {
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.itemView  .price-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10rpx;
+  width: 25%;
+  height: 100%;
+}
+
+.itemView  .price-box .price {
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: #61e01c;
+  width: 100%;
+  text-align: right;
+}
+
+.itemView  .price-box .vipPrices {
+  margin-top: 7rpx;
+  color: #de188a;
+  font-size: 34rpx;
+  width: 100%;
+  text-align: right;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.itemView .buy-box {
+  margin-left: 5%;
+  width: 108rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  background: #de188a;
+  font-size: 30rpx;
+  text-align: center;
+  color: white;
+  border-radius: 34rpx;
+}
+
+
+
+
+
+
+
+
+.middleLineView {
+  margin-top: 8rpx;
+  height: 1rpx;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 580rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 95rpx;
+  border-radius: 15rpx;
+}
+.modal-tip {
+  padding-top: 20rpx;
+  color: #030303;
+  text-align: center;
+  font-size: 40rpx;
+}
+.modal-title {
+  padding-top: 20rpx;
+  font-size: 30rpx;
+  color: rgba(137, 137, 137);
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: #db228a;
+  text-align: center;
+}
+
+.registerDialogBG {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+.regist-dialog {
+  position: fixed;
+  left: 0;
+  background: white;
+  width: 670rpx;
+  /* height: 66%; */
+  margin-left: 40rpx;
+  border-radius: 30rpx;
+  z-index: 1000;
+  overflow: hidden;
+  top: 50%;
+  margin: -50% 40rpx;
+}
+
+.regist-dialog .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.regist-dialog .top .left {
+  width: 60rpx;
+  margin-left: 30rpx;
+}
+
+.regist-dialog .top .title {
+  color: black;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.regist-dialog .top .cancel {
+  font-size: 30rpx;
+  color: #7e7e7e;
+  margin-right: 30rpx;
+}
+
+.regist-dialog .top-line {
+  width: 100%;
+  height: 1rpx;
+  background: #efefef;
+  margin-top: 20rpx;
+}
+
+.regist-dialog .phone-container {
+  margin-top: 52rpx;
+  width: 100%;
+  height: 110rpx;
+}
+
+.regist-dialog .phone-container .bg {
+  display: flex;
+  width: 610rpx;
+  height: 100%;
+  margin-left: 30rpx;
+  border: 1rpx solid #efefef;
+  border-radius: 55rpx;
+}
+
+.regist-dialog .phone-container .bg .text {
+  height: 110rpx;
+  /* width: 150rpx; */
+  color: #7e7e7e;
+  font-size: 30rpx;
+  line-height: 110rpx;
+  text-align: center;
+  margin-left: 27.5rpx;
+}
+
+.regist-dialog .phone-container .bg .line {
+  width: 2rpx;
+  height: 60rpx;
+  background: #efefef;
+  margin: 25rpx 27.5rpx;
+}
+
+.regist-dialog .phone-container .bg .phone {
+  width: 260rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: left;
+  font-size: 26rpx;
+  color: black;
+}
+
+.regist-dialog .phone-container .bg .default-phone {
+  color: #dcdcdc;
+}
+
+
+
+.regist-dialog .code-container {
+  margin-top: 36rpx;
+  width: 100%;
+  height: 110rpx;
+}
+
+.regist-dialog .code-container .bg {
+  display: flex;
+  width: 610rpx;
+  height: 100%;
+  margin-left: 30rpx;
+  border: 1rpx solid #efefef;
+  border-radius: 55rpx;
+  align-items: center;
+}
+
+.regist-dialog .code-container .bg .text {
+  height: 110rpx;
+  /* width: 150rpx; */
+  color: #7e7e7e;
+  font-size: 30rpx;
+  line-height: 110rpx;
+  /* text-align: center; */
+  margin-left: 27.5rpx;
+}
+
+.regist-dialog .code-container .bg .line {
+  width: 2rpx;
+  height: 60rpx;
+  background: #efefef;
+  margin: 25rpx 27.5rpx;
+}
+
+.regist-dialog .code-container .bg .code {
+  width: 260rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: left;
+  font-size: 26rpx;
+  color: black;
+}
+
+.regist-dialog .code-container .bg .default-code {
+  color: #dcdcdc;
+}
+
+.regist-dialog .code-container .bg .sendmsg {
+  font-size: 26rpx;
+  color: #808080;
+  height: 110rpx;
+  line-height: 110rpx;
+}
+
+.regist-dialog .code-container .bg .countdown {
+  position: absolute;
+  right: 70rpx;
+  font-size: 26rpx;
+  color: #808080;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-decoration: underline;
+}
+
+.regist-dialog .warnning-container {
+  margin-top: 115rpx;
+  width: 100%;
+}
+
+.regist-dialog .warnning-container .warnning {
+  height: 30rpx;
+  font-size: 30rpx;
+  color: #7d7d7d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.regist-dialog .bottom-container {
+  width: 100%;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.regist-dialog .bottom-container .button-bg {
+  display: flex;
+  width: 610rpx;
+  height: 110rpx;
+  margin-left: 30rpx;
+  background: #de188a;
+  border-radius: 55rpx;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+}
+
+.image-code {
+  position: absolute;
+  right: 70rpx;
+  height: 50rpx;
+  width: 130rpx;
+  border-radius: 8rpx;
+}

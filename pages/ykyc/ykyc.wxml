@@ -1,0 +1,27 @@
+<!--pages/ykyc/ykyc.wxml-->
+
+<navigation id="navigationBar" title="OPENSOURCE" ></navigation>
+
+
+<view class="container" wx:if="{{!requestErr && lists.length > 0}}">
+  <top-refresh id='tfresh'></top-refresh>
+
+  <scroll-view class='sc' scroll-y style="height: {{contentheight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower">
+
+    <video-item class="inner-item" wx:for="{{lists}}" wx:key="index" bindtap='play' content='{{item.imgSrc}}' watched='{{item.hasWatched}}' times='{{item.playTimes}}' data-item="{{item}}"></video-item>
+
+  </scroll-view>
+</view>
+
+<view class="nodata-container" bindtap="reloaddata" wx:if="{{requestErr || (lists.length == 0 && firstloading)}}"> 
+  <image src="/images/requesterr.png" mode="aspectFit|aspectFill|widthFix"/>
+  <text selectable="false" space="false" decode="false">
+      {{lists.length == 0 ? '暂无可看的视频' : '网络出问题了，请检查网络后刷新'}}
+  </text>
+</view>
+
+
+
+
+
+  

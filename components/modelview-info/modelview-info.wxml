@@ -1,0 +1,21 @@
+
+
+<view class='mask'>
+
+  <view class="content" wx:if="{{locationshow}}" animation="{{animation}}">
+    <view class='img-container'>
+      <image src="/images/home/info-auth.png" style='width:263rpx;height:190rpx;' />
+    </view>
+    <view class="text-container">
+      <text>欢迎来到xxxxxx,</text><!-- 小程序， -->
+      <text>尽享优惠福利!</text>
+    </view>
+
+    <button class="auth-button" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+    </button>
+    <view class='updatewx' wx:else>请升级微信版本</view>
+
+  </view>
+
+</view>

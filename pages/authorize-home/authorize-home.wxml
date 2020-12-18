@@ -1,0 +1,18 @@
+<navigation id="navigationBar" title="账号登录" back>
+</navigation>
+
+<view class="content">
+
+  <view class='img-container'>
+    <image src="{{mainImg}}" style='width:750rpx;height:850rpx;'/>
+  </view>
+
+  
+  <text class="infotext">仅获取您的昵称、头像等信息</text>
+
+  <button class="auth-button" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    授权登录
+  </button>
+  <view class='updatewx' wx:else>请升级微信版本</view>
+  <view class="cancel-button" bindtap="authcancel">暂不登录</view>
+</view>

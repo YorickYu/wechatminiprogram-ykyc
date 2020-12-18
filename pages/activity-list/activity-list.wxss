@@ -1,0 +1,65 @@
+/* pages/mine/activity-list.wxss */
+
+page {
+  background-color: #f8f8f8;
+}
+
+.activity-list-container {
+  display: flex;
+  margin-top: 40rpx;
+  height: 520rpx;
+  width: 100%;
+}
+
+.activity-list-bgimage {
+  display: flex;
+  position: absolute;
+  height: 400rpx;
+  width: 90%;
+  left: 5%;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.activity-list-container-bottom {
+  display: flex;
+  position: absolute;
+  left: 5%;
+  height: 120rpx;
+  width: 90%;
+  margin-top: 400rpx;
+  background-color: #fff;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+
+.activity-list-container-leftbottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-list-title {
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  width: 550rpx;
+  color: #2b2b2b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-list-time {
+  font-size: 25rpx;
+  margin-top: 8rpx;
+  margin-left: 30rpx;
+  color: #818181;
+}
+
+.activity-list-arrow {
+  position: absolute;
+  margin-top: 40rpx;
+  right: 25rpx;
+  width: 20rpx;
+  height: 40rpx;
+}

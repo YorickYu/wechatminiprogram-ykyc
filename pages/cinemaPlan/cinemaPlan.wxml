@@ -1,0 +1,144 @@
+<!--pages/cinemaPlan/cinemaPlan.wxml-->
+<wxs src="../../common.wxs" module="util" />
+<navigation id="navigationBar" title="{{resultData.name}}" back></navigation>
+
+<view wx:if="{{!alreadyLoaded}}" class="loading-container">
+
+  <!-- <image style="width:60rpx;height:60rpx;" src='/images/cinemaPlan/medium.png'></image> -->
+  <image style="width:100rpx;height:100rpx;margin-top:-30rpx;" src='/images/loading.gif'></image>
+  <text>数据加载中</text>
+</view>
+
+<view wx:if="{{alreadyLoaded}}">
+  <view class='topInfoView'>
+    <text class='cinemaName'>{{resultData.name}}</text>
+    <view class='topInfoView'>
+      <view class='addressView'>
+        <image class='locationImage' src='/images/cinemaPlan/index-location.png'></image>
+        <view class='cinemaAddress'>{{resultData.address}}</view>
+        <image class='tip' src='/images/cinemaPlan/tip.png' bindtap='clickTip'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='movieView'>
+    <view class='overbottomView'>
+      <view class='bottomView' style="background:url({{selectData.imagePoster}}) 100% ;filter:blur(15rpx);"></view>
+    </view>
+    <swiper class='movieSwipper' duration="300" bindchange="listenSwiper" previous-margin="290rpx" next-margin="290rpx" current="{{firstSelectIndex}}">
+      <view wx:for="{{moviesArr}}" wx:key="menu_for" style="width:100%">
+        <swiper-item data-index="{{index}}" class="{{selectIndex==index?'selectSwiperItem':'swiperItem'}}" bindtap="clickMovie">
+          <image class="{{selectIndex==index?'selectPostImage':'moviePostImage'}} posterabs" wx:if='{{!posterimgs[index]}}' src='/images/video-background.png' mode='aspectFill'> {{!posterimgs[index]}} </image>
+          <image class="{{selectIndex==index?'selectPostImage':'moviePostImage'}}" src='{{item.imagePoster}}' bindload='movieImageLoadSuccess' data-aindex="{{index}}"></image>
+        </swiper-item>
+      </view>
+    </swiper>
+    <image src='/images/cinemaPlan/arrow_up.png' class='arrow_up'></image>
+  </view>
+
+  <view class='movieInfoView'>
+    <view style='display:flex' bindtap='toMovieDetail'>
+      <text class='movieName'>{{selectData.name}}</text>
+      <image class='rightIcon' src='/images/mine/right-arrow.png'></image>
+      <text class='placeAndMovieLen'>{{selectData.place}}/{{selectData.movieLen}}分钟</text>
+    </view>
+    <view>
+      <text class='movieType'>温馨提示:电影开场前15分钟关闭在线售票</text>
+    </view>
+  </view>
+
+  <scroll-view class='dateScrollView' scroll-x="true">
+    <block wx:for="{{selectData.planList}}" wx:key="menu_for" style="width:100%">
+      <view class='dateView' data-index="{{index}}" bindtap="dateSecect">
+        <text class="{{dateIndex == index?'selectDateView':'defaultDateView'}}">{{item.date}}</text>
+        <view class="{{dateIndex == index?'selectlineView':'defaultlineView'}}"></view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <view class='middleLineView'></view>
+  <view class='mainPlanView'>
+    <scroll-view class='planScrollView' scroll-y="true">
+      <block wx:for="{{planList}}" wx:key="menu_for" style="width:100%">
+        <view class='itemView'>
+          <view class="time-box">
+            <text class='startTime'>{{item.startTime}}</text>
+            <text class='endTime'>{{item.endTime}}散场</text>
+          </view>
+          <view class="language-box">
+            <text class='language'>{{item.type}}</text>
+            <text class='hallName'>{{item.hallName}}</text>
+          </view>
+          <view class="price-box">
+            <view class='vipPrices' wx:if="{{hasDiscountPrice}}">
+              <text style="font-size: 20rpx;">折扣价</text>{{util.showPrice(item.discountPrice)}}<text style="font-size: 20rpx;">元</text>
+            </view>
+            <text class="price" wx:if="{{item.isAreaPrice==1}}">{{util.showPrice(item.price)}}元起</text>
+            <text class="price" wx:else>原价{{util.showPrice(item.price)}}元</text>
+          </view>
+          <view class='buy-box' bindtap='buyTicket' data-index="{{index}}">购票</view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}">
+      <view class="modal-tip">提示</view>
+      <view class="modal-title">您有未支付的订单，是否取消此订单?</view>
+      <view style='height:20rpx;'></view>
+      <view class="modal-footer">
+        <view class="btn-cancel" catchtap="onCancel" data-status="cancel">去支付</view>
+        <view class="btn-confirm" catchtap="onConfirm" data-status="confirm">确定</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--注册提醒-->
+<view class='registerDialogBG' catchtouchmove="preventTouchMove" wx:if="{{registerDialog}}">
+</view>
+<view class='regist-dialog' wx:if="{{registerDialog}}">
+  <form bindsubmit='submitRegister'>
+    <view class='top'>
+      <view class='left'></view>
+      <text class='title'>注册手机</text>
+      <text class='cancel' bindtap="hideRegisterModal">取消</text>
+    </view>
+    <view class='top-line' />
+    <view class='phone-container'>
+      <view class='bg'>
+        <text class='text'>手机号</text>
+        <view class='line' />
+        <input class='phone' type='number' maxlength='11' placeholder='请输入手机号' name="phone" bindinput="phoneInput" placeholder-class='default-phone'></input>
+      </view>
+    </view>
+
+    <view class='code-container'>
+      <view class='bg'>
+        <text class='text'>图形码</text>
+        <view class='line' />
+        <input class='code' type='text' maxlength='6' placeholder='请输入图形码' placeholder-class='default-code' name="code" bindinput="inputImageCode"></input>
+        <image class="image-code" src="{{base64ImgUrl}}" bindtap='renewImageCode' mode="aspectFit" lazy-load="false" />
+      </view>
+    </view>
+
+
+    <view class='code-container'>
+      <view class='bg'>
+        <text class='text'>短信码</text>
+        <view class='line' />
+        <input class='code' type='number' maxlength='6' placeholder='请输入验证码' placeholder-class='default-code' name="code"></input>
+        <text class="{{dateIndex == index?'sendmsg':'countdown'}}" bindtap="sendMsg">{{getcode}}</text>
+      </view>
+    </view>
+    <view class='warnning-container'>
+      <text class='warnning'>说明：请先验证手机号,验证后不可更改</text>
+    </view>
+    <view class='bottom-container'>
+      <button class='button-bg' formType="submit">提交验证
+        <!-- <text class='text' formType="submit">提交验证</text> -->
+      </button>
+    </view>
+  </form>
+</view>
+
+<tel-maskview bind:returnBind="bindtelmaskviewreturn" wx:if="{{authorizetel}}"></tel-maskview>

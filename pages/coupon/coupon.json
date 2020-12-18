@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navigation": "/components/navigation/navigation",
+    "coupon-item": "/components/coupon-item/coupon-item",
+    "tel-maskview": "/components/modelview-tel/modelview-tel"
+  }
+}

@@ -1,0 +1,36 @@
+<navigation id="navigationBar" title="{{title}}" back></navigation>
+<form report-submit="true" bindsubmit="formSubmit" bindreset="formReset">
+  <view class="title">{{activityTitle}}</view>
+  <view class='countDown'>
+    <text class="count_down_text">{{isStart ? '倒计时' : '距开始'}}:</text>
+
+    <view class="timebox {{hour>=100 ? 'timeboxWd' : ''}}">{{hour}}</view>
+    <view class="dashBox">:</view>
+    <view class="timebox">{{minute}}</view>
+    <view class="dashBox">:</view>
+    <view class="timebox">{{second}}</view>
+    <view class="dashBox">:</view>
+    <view class="timebox timeboxWd">{{milisecond}}</view>
+  </view>
+
+  <view class="pic">
+    <image class="activity-img" src="{{poster}}" mode="aspectFill"></image>
+  </view>
+  <view class="activity_title">
+    <view class="activity_title_border"></view>
+    <text class="activity_title_text">活动规则 :</text>
+  </view>
+  <view class="activity_space"></view>
+  <text class="activity_detail_text" wx:for="{{activityDetail}}" wx:key="{{index}}">{{item}}
+  </text>
+  <view class="activity_button">
+    <button class="button_detail" formType="submit" wx:if="{{activityStatus===1}}">{{buttonText}}</button>
+    <button class="button_detail_inactive" wx:if="{{activityStatus===0}}">{{buttonText}}</button>
+  </view>
+
+  <tel-maskview bind:returnBind="bindtelmaskviewreturn" wx:if="{{authorizetel}}"></tel-maskview>
+</form>
+
+<view class="bind-success" wx:if='{{bindsuccess}}'>
+  <text>绑定成功</text>
+</view>

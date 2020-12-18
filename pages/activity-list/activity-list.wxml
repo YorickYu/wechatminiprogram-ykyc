@@ -1,0 +1,14 @@
+<navigation id="navigationBar" title="活动列表" back></navigation>
+<top-refresh id='tfresh'></top-refresh>
+<scroll-view scroll-y style="height: {{contentheight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower">
+  <view bindtap="navToDetail" data-index="{{index}}" class='activity-list-container' wx:for="{{activityList}}" wx:key='index' bindscrolltoupper="upper" bindscrolltolower="lower">
+    <image src="{{item.poster}}" mode="aspectFill" class='activity-list-bgimage'></image>
+    <view class='activity-list-container-bottom'>
+      <view class='activity-list-container-leftbottom'>
+        <text class='activity-list-title'>{{item.title}}</text>
+        <text class='activity-list-time'>{{item.startTime}} ~ {{item.endTime}}</text>
+      </view>
+      <image src='../../images/mine/right-arrow.png' class='activity-list-arrow'></image>
+    </view>
+  </view>
+</scroll-view>

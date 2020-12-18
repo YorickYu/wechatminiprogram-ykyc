@@ -1,0 +1,28 @@
+<wxs src="./coupon-item.wxs" module="m1" />
+
+<view class="container" style="color: {{m1.textcolor(content.couponsFlag, content.type)}}">
+
+  <!-- 背景图片 -->
+  <image class="backgroundimage" src="{{m1.imagesrc(content.couponsFlag, content.type, content.unableClick)}}" />
+
+  <!-- left area -->
+  <view class="left-container">
+    <view class="inner exchange" wx:if="{{content.type==1}}">
+      <text>{{content.couponName}}</text>
+      <!-- <text>通兑券</text> -->
+    </view>
+    <view class="inner other" wx:if="{{content.type==2 || content.type==3}}">
+      <text>{{content.couponName}}</text>
+    </view>
+  </view>
+
+  <view class="right-container">
+    <text class="title">{{m1.title(content.type)}}</text>
+    <text class="subtitle">{{content.isSingleMovie == 0 ? "NO.":""}}{{content.isSingleMovie == 0 ? content.pwd : content.movie}}</text>
+    <text class="time durning">有效时间：{{content.limitTimePeriod}}</text>
+    <text class="time">有效期至：{{content.time}}</text>
+  </view>
+
+  <image class='selected' src='/images/coupon/selected.png' wx:if='{{content.isSelected}}'></image>
+
+</view>

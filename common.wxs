@@ -1,0 +1,40 @@
+var filters = {
+  toFix: function(value) {
+    return value.toFixed(2) //此处2为保留两位小数
+  }
+}
+var nowString = function() {
+  var obj = getDate()
+  return obj.getFullYear() + "年" + obj.getMonth() + 1 + "月" + obj.getDate() + "日"
+}
+var downTime = function(countDownTime) {
+  // 分钟
+  var min = Math.floor(countDownTime / 60 % 60)
+  // 秒
+  var sec = Math.floor(countDownTime % 60)
+  if (min > 0 && sec > 0) {
+    return min + "分" + sec + "秒"
+  } else if (min > 0 && sec == 0) {
+    return min + "分" + "0秒"
+  } else if (min == 0 && sec > 0) {
+    return sec + '秒'
+  } else {
+    return ''
+  }
+}
+var showPrice = function(price) {//单位：分，例如：100
+  // if (price % 100 == 0) {
+  //   return price / 100;
+  // } else if (price % 100 > 9){
+  //   return price / 100 + "." + price % 100;
+  // } else {
+  //   return price / 100 + ".0" + price % 100;
+  // }
+  return price / 100;
+}
+module.exports = {
+  toFix: filters.toFix,
+  nowString: nowString,
+  downTime: downTime,
+  showPrice: showPrice
+}

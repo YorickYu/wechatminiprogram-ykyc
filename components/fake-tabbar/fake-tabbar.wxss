@@ -1,0 +1,25 @@
+/* components/fake-tabbar/fake-tabbar.wxss */
+
+.tabbar-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.tabitem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabitem image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.tabitem text {
+  font-size: 20rpx;
+}

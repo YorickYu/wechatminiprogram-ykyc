@@ -1,0 +1,64 @@
+
+<wxs src="./order.wxs" module="m1" />
+
+
+<navigation id="navigationBar" title="我的订单" customback bind:customback="back"></navigation>
+
+<!-- 切换电影/商品订单 -->
+<view class='ordrswitchbar'>
+  <view class="switchitem {{currentSelected===index ? 'actived' : ''}}" wx:for="{{switchbar}}" wx:key="index" bindtap="switchaction" data-aindex="{{index}}">
+    <text>{{item}}</text>
+    <image wx:if="{{currentSelected===index}}" src="../../images/mine/active.png" />
+  </view>
+</view>
+
+
+<!-- 订单列表 -->
+<view class='order-container'>
+  <top-refresh id='tfresh'></top-refresh>
+
+  <scroll-view wx:if="{{(movieDetaillist.length > 0 || goodsExchangelist.length > 0) && (firstMovieLoaded || firstGoodsLoaded)}}" scroll-y style="height: {{contentheight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower">
+   
+    <!-- 电影订单 -->
+    <view class='order-item' wx:for="{{movieDetaillist}}" wx:key="index" wx:if='{{currentSelected == 0}}'>
+      <!-- 编号 -->
+      <view class='item-numberandstate'>
+        <text class="number">订单编号：{{item.id}}</text>
+        <text class="state {{item.state}}">{{item.stateValue}}</text>
+      </view>
+      <!-- 信息 -->
+      <navigator class='content'  hover-class="none" url="/pages/order-detail/order-detail?orderId={{item.id}}">
+        <text>{{item.movieName}}</text>
+        <text>{{item.planStartTime}}</text>
+        <text style="margin-top:25rpx;">{{item.cinemaName}}</text>
+      </navigator>
+      <!-- 支付 -->
+      <view class='pay' wx:if="{{item.status==1 && item.isExpire==0}}">
+        <view class='suf tocancel' bindtap='cancelOrder' data-orderid='{{item.id}}'>取消订单</view>
+        <view class='suf topay' bindtap='confirmOrder' data-orderitem='{{item}}'>去支付</view>
+      </view>
+    </view>
+
+    <!-- 商品订单 -->
+    <view class='order-item' wx:for="{{goodsExchangelist}}" wx:key="index" wx:if='{{currentSelected == 1}}'>
+      <view class='item-numberandstate'>
+        <text class="number">订单编号：{{item.orderNo}}</text>
+        <text class="state {{item.state == 3 ? 'paid' : 'unpaid'}}">{{m1.titleFormat(item.state)}}</text>
+      </view>
+      <navigator class='content'  hover-class="none" url="/pages/order-detail-exchange/order-detail-exchange?orderNo={{item.orderNo}}">
+        <text>{{item.name}}</text>
+        <text style="margin-top:10rpx;">兑换时间：{{item.crtTime}}</text>
+      </navigator>
+    </view>
+
+  </scroll-view>
+
+  <!-- no data -->
+  <view wx:if="{{((movieDetaillist.length == 0 && currentSelected == 0) || (goodsExchangelist.length == 0 && currentSelected == 1)) && (firstGoodsLoaded || firstMovieLoaded)}}" class="nodata-container">
+    <image src="/images/coupon/nocoupons.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    <text selectable="false" space="false" decode="false">
+      {{currentSelected==0 ? "暂无电影订单" : "暂无商品订单"}}
+    </text>
+  </view>
+
+</view>

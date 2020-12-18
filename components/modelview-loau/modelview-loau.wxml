@@ -1,0 +1,16 @@
+<view class='mask'>
+
+  <view class="content" wx:if="{{locationshow}}" animation="{{animation}}">
+    <view class='img-container'>
+      <image src="/images/home/location-auth.png" style='width:174rpx;height:172rpx;' />
+    </view>
+    <view class="text-container">
+      <text>自动定位失败,</text>
+      <text>请开启地理位置权限!</text>
+    </view>
+
+    <button class='auth-button' bindtap="openSetting">开启定位</button>
+
+  </view>
+
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navigation": "/components/navigation/navigation",
+    "top-refresh": "/components/top-refresh/top-refresh"
+  },
+  "navigationBarTextStyle": "white"
+}

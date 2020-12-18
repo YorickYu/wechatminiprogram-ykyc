@@ -1,0 +1,9 @@
+.swiper-area {
+  height: 170rpx;
+}
+
+.swiper-area .slide-image {
+  width: 300rpx;
+  height: 170rpx;
+  border-radius: 30rpx;
+}

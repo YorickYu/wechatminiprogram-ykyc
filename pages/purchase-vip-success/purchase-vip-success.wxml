@@ -1,0 +1,10 @@
+<!--pages/credits-exchange-success/credits-exchange-success.wxml-->
+<navigation id="navigationBar" title="购买成功" back></navigation>
+<view class="ces_top_top">
+  <image src="../../images/voucher/gotvoucher.png" mode="widthFix" class="success_img"></image>
+</view>
+<view class="ces_top_mid">购买成功</view>
+
+<view class='ces-bottom'>
+  <text class='finish' bindtap='onfinish'>完成</text>
+</view>

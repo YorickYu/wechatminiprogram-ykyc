@@ -1,0 +1,145 @@
+/* pages/order-detail/order-detail.wxss */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #f8f8f8;
+}
+
+.detail-container {
+  position: relative;
+  margin: 30rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  background-color: white;
+}
+
+/* 名称 */
+.name-container {
+  border-bottom: 0.4rpx dashed #d5d5d5;
+  padding: 20rpx 0;
+  color: #7d7d7d;
+}
+.name-container .nameandstatus {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.name-container .nameandstatus .name {
+  font-size: 42rpx;
+  color: #111111;
+}
+.name-container .nameandstatus .state {
+  font-size: 26rpx;
+  color: #8fbd35;
+}
+.name-container .nameandstatus  .state.finish {
+  font-size: 28rpx;
+  color: #8fbd35;
+}
+.name-container .nameandstatus  .state.unpaid {
+  font-size: 28rpx;
+  color: #bbbbbb;
+}
+.name-container .nameandstatus  .state.wait {
+  font-size: 28rpx;
+  color:  #ff4848;
+}
+.name-container .nameandstatus  .state.paid {
+  font-size: 28rpx;
+  color: #8fbd35;
+}
+.name-container .nameandstatus  .state.refunded {
+  font-size: 28rpx;
+  color: #8fbd35;
+}
+.name-container .nameandstatus  .state.failed {
+  font-size: 28rpx;
+  color: #ff4848;
+}
+.name-container .nameandstatus  .state.cancel {
+  font-size: 28rpx;
+  color: #bbbbbb;
+}
+
+.name-container .movie-time {
+  padding-top: 4rpx;
+  font-size: 36rpx;
+  color: #111111;
+}
+.name-container .movie-room {
+  padding-top: 15rpx;
+  font-size: 30rpx;
+}
+.name-container .movie-seat {
+  padding: 10rpx 0;
+}
+.name-container .movie-seat .seat-item {
+  display: inline-block;
+  border-radius: 25rpx;
+  background-color: #f5f4f7;
+  padding: 5rpx 20rpx;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+
+/* 取票码 */
+.code-container {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  /* align-items: center; */
+  border-bottom: 0.4rpx dashed #d5d5d5;
+  padding: 20rpx 0;
+  color: #7d7d7d;
+  font-size: 30rpx;
+}
+.code-container .code text{
+  font-size: 42rpx;
+  color: #111111;
+  font-weight: bold;
+}
+
+.code-container .tickets {
+  position: absolute;
+  right: 20rpx;
+  margin-top: 10rpx
+}
+
+/* address */
+.address-container {
+  border-bottom: 0.4rpx dashed #d5d5d5;
+  padding: 20rpx 0;
+  color: #7d7d7d;
+  font-size: 32rpx;
+}
+.address-container .second {
+  margin-top: 7rpx;
+}
+
+/* price */
+.price-container {
+  border-bottom: 0.4rpx dashed #d5d5d5;
+  padding: 20rpx 0;
+  color: #7d7d7d;
+  font-size: 32rpx;
+}
+.price-container view {
+  margin: 8rpx 0;
+}
+.price-container view text {
+  color: #111111;
+}
+
+/* detail */
+.number-container {
+  padding: 20rpx 0;
+  color: #7d7d7d;
+  font-size: 32rpx;
+}
+.number-container view {
+  margin: 8rpx 0;
+}

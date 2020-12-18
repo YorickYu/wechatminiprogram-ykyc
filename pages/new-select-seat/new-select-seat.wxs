@@ -1,0 +1,50 @@
+var startX = 0
+var startY = 0
+var lastTop = 0
+var offsetTop = 0
+var touchstart = function (event, ownerInstance) {
+  var touch = event.touches[0] || event.changedTouches[0]
+  startY = touch.pageY
+  var data = event.instance.getDataset()
+  if (lastTop===0){
+    lastTop = data.toppx
+  }
+  offsetTop = data.toppx
+}
+var touchmove = function (event, ownerInstance) {
+  var touch = event.touches[0] || event.changedTouches[0]
+  var data = event.instance.getDataset()
+  var pageY = touch.pageY
+  var limit = data.seatarea - data.seatrealheight
+  var top = pageY - startY + lastTop
+  if (top - offsetTop <= 0){
+    top = offsetTop 
+  } else if (top - offsetTop>limit){
+    top = limit + offsetTop
+  }
+  startY = pageY
+  lastTop = top
+  ownerInstance.selectComponent('.seatTool').setStyle({
+    top: top + 'px'
+  })
+  // console.log(JSON.stringify(event))
+}
+var touchend = function (event, ownerInstance) {
+  // const instance = ownerInstance.selectComponent('.seatArea') // 返回组件的实例
+  // instance.setStyle({
+  //   'font-size': '14px' // 支持rpx
+  // })
+  // instance.getDataset()
+  // instance.setClass(className)
+  // ownerInstance.callMethod('testCallmethod', {
+  //   complete: function (res) {
+  //     console.log('args', res)
+  //   }
+  // })
+  // return false // 不往上冒泡，相当于调用了同时调用了stopPropagation和preventDefault
+}
+module.exports = {
+  touchmove: touchmove,
+  touchstart: touchstart,
+  touchend: touchend
+}

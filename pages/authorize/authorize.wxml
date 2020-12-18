@@ -1,0 +1,19 @@
+<navigation id="navigationBar" title="授权" back></navigation>
+
+
+<view class='content'>
+  <view class='img-container'>
+    <image src="/images/home/info-auth.png" style='width:263rpx;height:190rpx;' />
+  </view>
+  <view class="text-container">
+    <text style='color: #111111; font-size: 40rpx;'>欢迎来到xxxxx</text>
+    <!-- 小程序， -->
+    <text> </text>
+    <text style='font-size: 32rpx;'>授权登录即可体验所有功能，尽享优惠福利!</text>
+    <text style='font-size: 32rpx;'>xxxxxx仅获取您的昵称、头像等信息</text>
+  </view>
+  <button class="auth-button" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    授权登录
+  </button>
+  <view class='updatewx' wx:else>请升级微信版本</view>
+</view>

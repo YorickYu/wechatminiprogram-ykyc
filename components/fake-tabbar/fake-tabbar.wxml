@@ -1,0 +1,6 @@
+<view class='tabbar-container'>
+  <view class="tabitem" wx:for="{{items}}" wx:key="index">
+    <image class="" src="{{findex===index ? item.icon_selected : item.icon_normal}}" />
+    <text style="color: {{(findex===index ? '#C71585': '#D3D3D3')}};">{{item.name}}</text>
+  </view>
+</view>

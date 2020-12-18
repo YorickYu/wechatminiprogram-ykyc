@@ -1,0 +1,62 @@
+<wxs module="m1">
+    var mate = function(idx, val) {
+      if (idx === 0 ) {
+        return val+"折";
+      }
+      return val;
+    }
+    module.exports.formate = mate;
+</wxs>
+
+<navigation id="navigationBar" title="我的"></navigation>
+<image class="background" src='../../images/mine/mine-background.png'></image>
+<view class='cover'></view>
+<view class="container">
+  <!-- 头像区域 -->
+  <view class="header" bindtap="authUserInfo">
+    <image class="avatar" src="{{avatar}}"></image>
+    <view class="username">{{username}}</view>
+    <image class="vip-icon" wx:if="{{vipStatus}}" src="/images/vip/vip-mine.png"></image>
+  </view>
+  <!-- 内容区域 -->
+  <view class="content">
+    <image class="content-background" src='../../images/mine/content-background.png' style='width:689rpx;height:280rpx;'></image>
+    <!-- 1/4 方格 -->
+    <view class="inner-box" wx:for="{{items}}" wx:key="index" bindtap='boxclick' data-aindex='{{index}}'>
+      <view class="title">
+        {{item.title}}
+        <image class="right-corner" wx:if="{{index===1}}" src='../../images/mine/right-corner.png'></image>
+      </view>
+      <view class="value">    
+        {{m1.formate(index, item.value)}}
+      </view>
+    </view>
+  </view>
+
+  <!-- VIP区域 -->
+  <view class="vip-container" wx:if="{{showVip}}">
+    <view class="vip-left">
+      <view class="left-top">{{vipPrice}} 100元开通VIP会员</view>
+      <view class="left-bottom">原价199元 一年可省280元</view>
+    </view>
+    <view class="vip-right" bindtap="switchtovip">
+      <view class="right-top">VIP会员详情</view>
+      <view class="right-bottom">{{!vipStatus ? '立即开通' : '详情/记录'}}</view>
+    </view>
+  </view>
+  <!-- 绑定手机 -->
+  <view class="inner-item" bindtap="bindPhone" wx:if="{{!noWxAuth}}">
+      绑定手机
+    <image class='right-arrow' src='../../images/mine/right-arrow.png'></image>
+  </view>
+
+  <!-- 列表区域 -->
+  <view class="list">
+    <view class="inner-item" wx:for="{{lists}}" wx:key="{{index}}" bindtap="switchto" data-idz="{{item.id}}">
+      {{item.name}}
+      <image class='right-arrow' src='../../images/mine/right-arrow.png'></image>
+    </view>
+  </view>
+  <!-- 活动区域  复用首页模块 -->
+  <activity-swiper banners="{{activities}}" bind:tohome='toactivitydetail'></activity-swiper>
+</view>

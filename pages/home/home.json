@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "navigation": "/components/navigation/navigation",
+    "activity-swiper": "/components/activity-swiper/activity-swiper",
+    "activity-swiper-col": "/components/activity-swiper-col/activity-swiper-col",
+    "location-maskview": "/components/modelview-loau/modelview-loau",
+    "userinfo-maskview": "/components/modelview-info/modelview-info",
+    "faketabbar": "/components/fake-tabbar/fake-tabbar"
+  }
+}

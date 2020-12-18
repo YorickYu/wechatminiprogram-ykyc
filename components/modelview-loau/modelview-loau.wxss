@@ -1,0 +1,62 @@
+.mask{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 9999;
+}
+
+.content {
+  position: absolute;
+  height: 550rpx;
+  width: 420rpx;
+  border-radius: 40rpx;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.content .img-container {
+  width: 100%;
+  height: 260rpx;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .text-container {
+  width: 100%;
+  color: #a6a6a6;
+  font-size: 34rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .text-container text {
+  padding: 10rpx;
+}
+
+.content .auth-button {
+  height: 90rpx;
+  width: 230rpx;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  color: white;
+  background-color: #dc228a;
+  border-radius: 45rpx;
+}
+
+.content .auth-button::after {
+  border: none;
+}
+

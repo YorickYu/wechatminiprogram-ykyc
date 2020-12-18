@@ -1,0 +1,46 @@
+<navigation id="navigationBar" title="选择城市" back></navigation>
+
+<view class='a-z' wx:if="{{cityAZ.length>0}}">
+  <view class="a-z-item" wx:for="{{cityAZ}}" wx:key="unique">
+    <view data-id='{{item.cityName}}' catchtouchstart="bindAZ" catchtouchmove="handlerMove">{{item.cityName}}</view>
+  </view>
+</view>
+
+<view class='city-item-content'>
+  <view class="current_city_wrap">
+    <text class="current_city_title">当前城市</text>
+    <view class="current_city_blk" bindtap='returnhome'>
+      {{currentCity.cityName}}
+    </view>
+  </view>
+  <view class="recent_city_wrap" wx:if="{{recentCityList.length>0}}">
+    <text class="recent_city_title">最近访问城市</text>
+  </view>
+  <view class="recent_blk_wrap">
+    <view class="recent_city_blk" wx:for="{{recentCityList}}" wx:key="{{index}}" data-cityitem='{{item}}' bindtap='citySelected'>
+      {{item.cityName}}
+    </view>
+  </view>
+  <view class="hot_city_wrap" wx:if="{{targetHotCityList.length>0}}">
+    <text class="hot_city_title">热门城市</text>
+  </view>
+  <view class="hot_blk_wrap">
+    <view class="hot_city_blk" wx:for="{{targetHotCityList}}" wx:key="{{index}}" data-cityitem='{{item}}' bindtap='citySelected'>
+      {{item.cityName}}
+    </view>
+  </view>
+  <view class="more_city_wrap" wx:if="{{cityAZ.length>0}}">
+    <text class="more_city_title">更多城市</text>
+  </view>
+  <view class="more_blk_wrap">
+    <view class="more_city_blk" data-id='{{item.cityName}}' bindtap='bindAZ' wx:for="{{cityAZ}}" wx:key="{{index}}">
+      {{item.cityName}}
+    </view>
+  </view>
+  <view class="morecitysearch">
+    <view wx:for="{{targetAllCityList}}" wx:key="unique">
+      <view wx:if="{{item.pingyin.length > 1}}" class='city-item' data-cityitem='{{item}}' bindtap='citySelected'>{{item.cityName}}</view>
+      <view wx:else class='city-item-A-Z' data-cityname='{{item.cityName}}'>{{item.cityName}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<wxs src="../order/order.wxs" module="m1" />
+
+<navigation id="navigationBar" title="订单详情" back></navigation>
+<view class='order-bg'>
+  <text class='good-name'>{{orderInfo.name}}</text>
+  <text class='exchange-score'>{{orderInfo.point}}积分</text>
+  <view class='line'/>
+  <view class='one'>
+    <text class='order-no_'>订单编号：</text>
+    <text class='order-no'>{{orderInfo.orderNo}}</text>
+  </view>
+  <view class='two'>
+    <text class='exchange-time_'>兑换时间：</text>
+    <text class='exchange-time'>{{orderInfo.crtTime}}</text>
+  </view>
+  <view class='three'>
+    <text class='mobile-number_'>手机号码：</text>
+    <text class='mobile-number'>{{orderInfo.tel}}</text>
+  </view>
+  <view class='four'>
+    <text class='exchange-type_'>兑换方式：</text>
+    <text class='exchange-type'>{{orderInfo.payType == 1 ? '积分':'现金'}}</text>
+  </view>
+  <view class='five'>
+    <text class='exchange-status_'>兑换状态：</text>
+    <text class='exchange-status'>{{m1.titleFormat(orderInfo.state)}}</text>
+  </view>
+</view>

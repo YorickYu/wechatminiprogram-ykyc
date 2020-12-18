@@ -1,0 +1,34 @@
+
+<navigation id="navigationBar" title="绑定手机" back></navigation>
+
+<view class='regist-container'>
+  <!-- 手机号 -->
+  <view class='regist-item'>
+    <text class='regist-title'>手机号</text>
+    <view class='regist-line'></view>
+    <input type='number' disabled='{{alreadySend}}' maxlength="11" placeholder='请输入手机号' placeholder-style='color:#dbdbdb' bindinput="inputPhoneNum" />
+  </view>
+
+  <!-- 图形验证码 -->
+  <view class='regist-item'>
+    <text class='regist-title'>图形码</text>
+    <view class='regist-line'></view>
+    <input type='text' placeholder='请输入图形码' placeholder-style='color:#dbdbdb'  bindinput="inputImageCode" />
+    <image class="image-code" src="{{base64ImgUrl}}" bindtap='renewImageCode' mode="aspectFit" lazy-load="false" /> 
+  </view>
+
+  <!-- 短信验证码 -->
+  <view class='regist-item'>
+    <text class='regist-title'>短信码</text>
+    <view class='regist-line'></view>
+    <input placeholder='请输入验证码' placeholder-style='color:#dbdbdb' type="number" bindinput="inputCode" />
+    <text class='regist-send-code' wx:if="{{send}}" bindtap="sendMsg">获取验证码</text>
+    <text class='regist-send-code' wx:if="{{alreadySend}}" bindtap="sendMsg">  {{wxTimerSecond}}秒后重发 </text>
+  </view>
+
+
+  <text class='regist-tip'>说明：请先验证手机号，验证后不可更改</text>
+  <text class='regist-submit-lock' bindtap='' wx:if="{{disabled}}">提交绑定</text>
+  <text class='regist-submit' bindtap='onSubmit' wx:if="{{!disabled}}">提交绑定</text>
+
+</view>

@@ -1,0 +1,42 @@
+<navigation id="navigationBar" title="积分兑换" back>
+</navigation>
+
+<scroll-view class="container" scroll-y style="height: {{contentheight}}px;" bindscrolltolower="lower">
+
+  <view class="banner-container">
+    <swiper class="swiper-area" autoplay circular>
+      <block wx:for="{{headerInfo.carouselList}}" wx:key="index">
+        <swiper-item bindtap='bannernavigate' data-item='{{item}}'>
+          <image class="slide-image" wx:if='{{!loadingSuccess}}' src='/images/video-background.png' mode='aspectFill'></image>
+          <image class="slide-image" wx:if="{{item.image}}" src="{{item.image}}" mode="aspectFill" bindload='bannerImageLoadSuccess' />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="points-container">
+    <view class="points">我的积分：
+      <text wx:if="{{headerInfo.login == 1}}">{{headerInfo.point}}</text>
+      <view wx:if="{{headerInfo.login == 0}}" class="login-guide" bindtap="toLogin">登录后查看</view>
+    </view>
+    <view class="points-button" bindtap="toPointsList">
+      积分记录
+      <image src="/images/mine/right-corner-gray.png"></image>
+    </view>
+  </view>
+
+  <view class="goodslist-container" wx:if="{{productList.length > 0 && listFirstLoad}}">
+    <block wx:for='{{productList}}' wx:key='index'>
+      <goods-item bindtap='toGoodsDetail' data-aindex='{{index}}' poster='{{item.cover}}' title='{{item.name}}'></goods-item>
+    </block>
+
+  </view>
+
+  <view class="nodata-container" wx:if="{{productList.length == 0 && listFirstLoad}}">
+    <image src="/images/coupon/nocoupons.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+    <text selectable="false" space="false" decode="false">
+      暂无商品
+    </text>
+  </view>
+
+</scroll-view>

@@ -1,0 +1,180 @@
+<wxs src="./home.wxs" module="m1" />
+
+<!-- 顶部导航控制器 -->
+<navigation id="navigationBar" title="{{title}}"></navigation>
+<view class='escape-view' wx:if='{{escapetap}}' catchtouchmove="handletouchmove">
+  <!-- 用于屏蔽事件 -->
+</view>
+<!-- 容器 -->
+<view class="nodata-container" bindtap="reloaddata" wx:if='{{requestErr}}'>
+  <image src="/images/requesterr.png" mode="aspectFit|aspectFill|widthFix" />
+  <text selectable="false" space="false" decode="false">
+      网络出问题了，请检查网络后刷新
+  </text>
+</view>
+
+<view id="offset-container" class='container' wx:else>
+  <image class="background" src='../../images/home/home-background.png'></image>
+
+  <!-- 定位 & 搜索框 -->
+  <view class="location">
+    <view class="city-area" bindtap='tocitylist'>
+      <view class="city">{{cityname}}</view>
+      <image class="icon" src="../../images/home/location-arrow.png" />
+    </view>
+    <view class="search-area" bindtap='tomovielist'>
+      <image class="icon" src="../../images/home/search-icon.png" />
+      <text class="holder">查看更多影院</text>
+    </view>
+  </view>
+  <!-- banner -->
+  <view class="banner">
+    <swiper class="swiper-area" indicator-dots="{{carousels.length>1}}" autoplay circular>
+      <block wx:for="{{carousels}}" wx:key="{{index}}">
+        <swiper-item bindtap='bannernavigate' data-item='{{item}}'>
+          <image class="slide-image" wx:if='{{!loadingSuccess}}' src='/images/video-background.png' mode='aspectFill'></image>
+          <image wx:if="{{item.image}}" src="{{item.image}}" class="slide-image" mode="aspectFill" bindload='bannerImageLoadSuccess' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="cinema-area">
+      <view class="cinema" bindtap='buyticket'>
+        <view class="name">{{cinemaModel.cinemaName}}</view>
+        <view class="address">
+          <image class="icon" src="../../images/home/location.png" />
+          <text class="text">距离你{{cinemaModel.distinct}}</text>
+        </view>
+      </view>
+      <view class="countday-area">
+        <view>优惠剩余:
+          <view class="countday-back" wx:for="{{m1.numberarray(discountInfoModel.remineDay)}}" wx:key="index">
+            <text>{{item}}</text>
+          </view>天
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 分割线 -->
+  <view class="line"></view>
+
+  <!-- 立即购票 -->
+  <view class="ticket">
+    <view class='top-container'>
+      <view class='left-container' bindtap='discountaction'>
+        <view class='discount'>
+          当前享
+          <text>{{userInfo.maxDiscount}}</text>
+          <text decode style="font-size:30rpx;">&nbsp;</text>折券优惠
+          <image id="anchor" src="{{showdiscount ? discounticon_s : discounticon_n}}" />
+        </view>
+        <view class='viptime' wx:if="{{vipStatus}}">VIP有效期至：{{vipEndTime}}</view>
+        <view class='labels' wx:if="{{!vipStatus}}">
+          <view class='coupon-label' wx:if="{{cinemaModel.canUserCoupon}}">优惠券</view>
+          <view class='score-label' wx:if="{{cinemaModel.addPoint}}">积分</view>
+          <view class='discount-label' wx:if="{{cinemaModel.canUseDiscount}}">折扣</view>
+        </view>
+      </view>
+      <view class='right-container'>
+        <view class='buyticket' bindtap='buyticket'>立即购票</view>
+        <view class="start">
+          最低
+          <text>{{cinemaModel.miniPrice}}元</text>起
+        </view>
+      </view>
+    </view>
+    <view class='bottom-container'>
+      <!-- 1 -->
+      <view class='inner-container' bindtap='tocoupon'>
+        <image src='../../images/home/coupon-icon.png' style='width:110rpx;height:110rpx;'></image>
+        <view class='middletext'>
+          <text class='name'>优惠券</text>
+          <text class='leftnum'>{{userInfo.couponCount}}张</text>
+        </view>
+        <image src='../../images/home/right-arrow.png' style='width:17rpx;height:34rpx;'></image>
+      </view>
+      <!-- 2 -->
+      <view class='inner-container' bindtap='toscore'>
+        <image src='../../images/home/score-icon.png' style='width:110rpx;height:110rpx;'></image>
+        <view class='middletext'>
+          <text class='name'>积分</text>
+          <text class='leftnum'>{{userInfo.point}}</text>
+        </view>
+        <image src='../../images/home/right-arrow.png' style='width:17rpx;height:34rpx;'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 分割线 -->
+  <view class="line"></view>
+
+  <!-- 会员页 -->
+  <view class="vip-container" wx:if="{{memberShipList.length > 0}}">
+    <scroll-view class="vip-scroll-view" scroll-x enable-flex>
+      <view class="scroll-view-item" wx:for="{{memberShipList}}" wx:key="{{index}}" bindtap="switchtovip" data-item="{{memberShipList[index].memberShipId}}">
+        <image id="green" src="{{memberShipList[index].cover}}" mode="aspectFill"></image>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 热门活动 -->
+  <view class='activity'>
+    <view class='title-container'>
+      <view class='title'>
+        <image src='../../images/home/radius-title.png' style='width:8rpx;height:32rpx;'></image>
+        <text>热门活动</text>
+      </view>
+      <view class='more' bindtap='moreactivities' wx:if='{{activities.length > 0}}'>更多活动</view>
+    </view>
+    <activity-swiper-col banners="{{activities}}" bind:tohome='toactivitydetail'></activity-swiper-col>
+  </view>
+</view>
+
+<!-- 假tabbar -->
+<faketabbar class='faketabbar' wx:if="{{fakebar}}" findex="{{0}}" style="height: {{height}}px;"></faketabbar>
+
+<!-- 各种弹窗 -->
+<location-maskview bind:returnCity="locationmaskviewreturn" wx:if="{{authorizelocation}}"></location-maskview>
+<!-- <userinfo-maskview bind:returnInfo="userinfomaskviewreturn" wx:if="{{authorizeuserinfo}}"></userinfo-maskview> -->
+
+<!-- 影院福利 -->
+<view class="showdiscount {{userGuideCoupon ? 'guide-background' : ''}}" wx:if="{{showdiscount}}" bindtouchstart="handletouchtart" catchtouchmove="handletouchmove">
+  <!-- 用户引导1 -->
+  <image class="guide1-image" wx:if='{{userGuideCoupon}}' bindtap='guidenext' src='../../images/home/guide-coupons.png' style='top:{{anchorrect.top - 195}}px;left:{{anchorrect.left-40}}px;'></image>
+  <image class="anchor" src="{{showdiscount ? discounticon_s : discounticon_n}}" style='top: {{anchorrect.top}}px;left: {{anchorrect.left}}px;' />
+  <view class='trangle-view' style='top: {{anchorrect.bottom}}px;left: {{anchorrect.left}}px'></view>
+  <view class='list-body' style='top: {{anchorrect.bottom}}px;left: 100px'>
+    <view class='body-title'>
+      <image class="anchor" src='/images/home/detail-crown.png'></image>
+      <view>影院福利</view>
+    </view>
+    <view wx:if='{{discountInfoModel.newUserAward != null}}'>新用户送
+      <text class='targetcount'>{{discountInfoModel.newUserAward.discount}}</text>折券</view>
+    <block wx:for="{{discountInfoModel.list}}" wx:key="index">
+      <view animation="{{animation}}">观影
+        <text>{{m1.numberformat(item.planCount)}}</text>次，得
+        <text class='targetcount'>{{item.discount}}</text>折券
+      </view>
+    </block>
+
+  </view>
+</view>
+
+<!-- 用户引导2 -->
+<view class="showdiscount guide-background" wx:if='{{userGuideActions}}' catchtouchmove="handletouchmove">
+  <image class="guide2-image1" src="/images/home/guide-fin.png" style='top:{{adstop - 54}}px;' bindtap="guidefinish"></image>
+  <image class="guide2-image2" bindtap="guidefinish" src="/images/home/guide-video.png"></image>
+  <view class='guide2-button' style="top:{{guideButtonRect.top}}px;left:{{guideButtonRect.left}}px;">立即购票</view>
+</view>
+
+<!-- 广告 -->
+<view class='ads-container' style='top: {{adstop}}px;' wx:if="{{showads}}" bindtap='openads' catchtouchmove="handletouchmove">
+  <image class='adsimage' wx:if='{{adsource.imageUrl}}' src='{{adsource.imageUrl}}' mode="aspectFill"></image>
+  <view class='countdown' catchtap='adsdismiss'>
+    <text>跳过</text>
+    <text>{{wxTimerSecond}}s</text>
+  </view>
+</view>
+
+<!-- 浮动按钮 新手引导 -->
+<view class='user-guide' catchtouchmove="buttonMove" catchtouchstart="buttonStart" catchtouchend="buttonEnd" style="top:{{buttonTop}}px;left:{{buttonLeft}}px;" wx:if="{{!requestErr}}">
+  <image src="/images/home/user-guide.png" />
+</view>

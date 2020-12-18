@@ -1,0 +1,12 @@
+<!--components/goods-item/goods-item.wxml-->
+
+<view class="goods-container">
+
+  <image class="slide-image pos" wx:if='{{!loadingSuccess}}' src='/images/video-background.png' mode='aspectFill'></image>
+  <image class="slide-image" wx:if="{{poster}}" src="{{poster}}" mode="aspectFill" bindload='onImageLoadSuccess' />
+
+  <view class="title-container">
+    <text class="goods-title">{{title}}</text>
+  </view>
+
+</view>

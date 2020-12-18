@@ -1,0 +1,22 @@
+<navigation id="navigationBar" title="{{title}}" back></navigation>
+<view class="voucher_top_top">
+  <image src="../../images/voucher/gotvoucher.png" mode="widthFix" class="got_touch_img"></image>
+</view>
+<view class="voucher_top_mid">{{voucherText}}</view>
+<view class="voucher_top_bottom" wx:if="{{type==2}}" decode="true">
+  <text class="voucher_text">{{awardType == 1 ? "取票码" : "兑换码"}}\n{{validCode}}</text>
+</view>
+<view class="line"></view>
+<view class="voucher_btm">
+  <image wx:if='{{type != 2}}' src="{{cover}}" mode="aspectFill" class="btm_activity_image"></image>
+  <view class="btm_right">
+    <view class="btm_activity_time" wx:if='{{week.length > 0}}'>
+      <image class="img_activity_time" mode="widthFix" src="../../images/activity/time.png"></image>
+      <text class="text_activity_time">{{week}}</text>
+    </view>
+    <view class="btm_activity_address" wx:if='{{address.length > 0}}'>
+      <image class="img_activity_address" mode="widthFix" src="../../images/activity/address.png"></image>
+      <text class="text_activity_address">{{address}}</text>
+    </view>
+  </view>
+</view>

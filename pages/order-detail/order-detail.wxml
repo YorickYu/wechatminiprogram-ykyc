@@ -1,0 +1,48 @@
+<!-- pages/order-detail/order-detail.wxml -->
+<navigation id="navigationBar" title="订单详情" back></navigation>
+<view class='background'></view>
+<view class='detail-container' wx:if='{{order.orderNo.length > 0}}'>
+  <!-- 电影名称 -->
+  <view class='name-container'>
+    <view class='nameandstatus'>
+      <view class='name'>{{order.movieName}}</view>
+      <view class='state {{state}}'>{{stateValue}}</view>
+    </view>
+    <view class='movie-time'>{{order.planTime}}</view>
+    <view class='movie-room'>{{order.cinemaName}}  {{order.hallName}}</view>
+    <view class="movie-seat">
+      <view class="seat-item" wx:for="{{seatList}}" wx:key="index">{{item}}</view>
+    </view>
+  </view>
+  <!-- 取票码 -->
+  <view class='code-container' wx:if="{{codes.length > 0}}">
+    <view class='code' wx:for="{{codes}}" wx:key="{{index}}"> 
+      {{item.name}}:
+      <text wx:if="{{order.validCode!=null}}" selectable>{{item.validCode}}</text>
+    </view>
+    <view class='tickets'>{{ticketNum}}张电影票</view>
+  </view>
+  <!-- address -->
+  <view class='address-container'>
+    <view>{{order.cinemaName}}</view>
+    <view class='second'>{{order.address}}</view>
+  </view>
+  <!-- 金额 -->
+  <view class='price-container'>
+    <view>实付金额：
+      <text>¥{{order.factPayMoney/100}}</text>
+    </view>
+    <view>优惠金额：
+      <text>¥{{order.preferencePrice/100}}</text>
+    </view>
+    <view wx:if="{{order.discount!=null&&order.discount!=0}}">优惠折扣：
+      <text>{{order.discount}}</text>
+    </view>
+  </view>
+  <!-- 详情、手机等 -->
+  <view class='number-container'>
+    <view>订单编号：<text selectable>{{order.orderNo}}</text></view>
+    <view>购买时间：{{order.crtTime}}</view>
+    <view>手机号码：{{order.tel}}</view>
+  </view>
+</view>

@@ -1,0 +1,88 @@
+/* pages/regist/regist.wxss */
+page {
+  background-color: rgb(246, 246, 246);
+}
+
+.regist-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40rpx;
+}
+
+.regist-item {
+  /* 垂直居中 */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  margin: 20rpx 20rpx 20rpx;
+  background-color:white;
+  width: 90%;
+  height: 110rpx;
+  border-radius: 110rpx;
+}
+
+.regist-title {
+  /* width: 150rpx; */
+  padding: 45rpx 30rpx;
+  font-size: 28rpx;
+  color: rgb(134, 134, 134);
+}
+
+.regist-line {
+  width: 2rpx;
+  height: 60rpx;
+  background-color:#eeeeee;
+}
+
+input {
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+
+.regist-send-code {
+  position: absolute;
+  right: 70rpx;
+  color: rgb(134, 134, 134);
+  font-size: 26rpx;
+  border-bottom: 2rpx solid;
+}
+
+.regist-tip {
+  padding: 120rpx 60rpx 20rpx;
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: rgb(134, 134, 134);
+}
+
+.regist-submit-lock {
+  margin: 20rpx;
+  background-color: #d2d2d2;
+  width: 90%;
+  height: 100rpx;
+  border-radius: 100rpx;
+  color: white;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.regist-submit {
+  margin: 20rpx;
+  background-color: rgb(211, 0, 120);
+  width: 90%;
+  height: 100rpx;
+  border-radius: 100rpx;
+  color: white;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.image-code {
+  position: absolute;
+  right: 70rpx;
+  height: 50rpx;
+  width: 130rpx;
+  border-radius: 8rpx;
+
+}

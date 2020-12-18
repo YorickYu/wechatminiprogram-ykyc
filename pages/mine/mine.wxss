@@ -1,0 +1,192 @@
+
+.cover {
+  position: fixed;
+  background-color: #f8f8f8;
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 410rpx;
+  background-size: cover;
+  z-index: 5;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  padding: 0 30rpx;
+}
+
+/* 头像区域 */
+
+.header {
+  width: 100%;
+  height: 150rpx;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  /* 侧轴居中 */
+  align-items: center;
+}
+
+.header .avatar {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  background-color: orange;
+  margin-left: 20rpx;
+  border: 0.4px solid white;
+}
+
+.header .username {
+  margin-left: 20rpx;
+  color: white;
+  font-size: 40rpx;
+  font-weight: bold;
+  max-width: 58%;
+  overflow:hidden;
+
+}
+
+.header .vip-icon {
+  margin-left: 20rpx;
+  display: inline-block;
+  width: 72rpx;
+  height: 32rpx;
+}
+
+/* 内容区域 */
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 280rpx;
+  border-radius: 30rpx;
+  z-index: 100;
+}
+
+.content-background {
+  position: absolute;
+  z-index: 5;
+}
+
+.inner-box {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 49%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.title {
+  margin-top: 5rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.right-corner {
+  padding-left: 10rpx;
+  height: 13rpx;
+  width: 11rpx;
+  background-size: cover;
+}
+
+.value {
+  margin-top: 5rpx;
+  font-weight: bold;
+}
+
+
+/* VIP区域 */
+.vip-container {
+  background-color: white;
+  height: 156rpx;
+  border-radius: 78rpx;
+  margin-top: 20rpx;
+
+  display: flex;
+  flex-direction: row;
+
+}
+
+.vip-container .vip-left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vip-left .left-top {
+  font-size: 42rpx;
+  font-weight: bolder;
+  margin: 10rpx 0;
+  color: #8d225a;
+}
+.vip-left .left-bottom {
+  font-size: 28rpx;
+  color: #111111;
+}
+
+.vip-container .vip-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vip-right .right-top {
+  font-size: 26rpx;
+  color: #e02282;
+  padding-top: 10rpx;
+}
+.vip-right .right-bottom {
+  background-color: #e02282;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: white;
+  margin: 10rpx 0 20rpx 0;
+  padding: 0 30rpx;
+  border-radius: 40rpx;
+}
+
+/* 列表区域 */
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+}
+
+.inner-item {
+  padding-left: 40rpx;
+  margin-top: 20rpx;
+  padding-right: 30rpx;
+  height: 100rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-arrow {
+  height: 34rpx;
+  width: 17rpx;
+  background-size: cover;
+}
+
+.activity-container {
+  padding-top: 20rpx;
+}

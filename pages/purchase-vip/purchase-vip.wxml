@@ -1,0 +1,41 @@
+<navigation id="navigationBar" title="VIP会员" back>
+
+
+</navigation>
+
+<view class="container">
+
+  <!-- 三大特权、购买区 -->
+  <view class="top-container">
+    <image class="back-img" src="/images/vip/vip-top.png"></image>
+
+    <view class="top-content">
+      <text class="title">{{name}}</text>
+      <text class="subtitle">{{description.title}}</text>
+    </view>
+
+    <view class="bottom-content">
+      <view class="list-item" wx:for="{{description.body.length}}" wx:key="{{index}}" style="margin-top:{{(index==0 && description.body.length<4) ? '20' : '0'}}px;">
+        <image class="list-icon" src="{{bodyicons[index]}}"></image>
+        <text class="list-text">{{description.body[index]}}</text>
+      </view>
+
+
+      <form report-submit="true" bindsubmit="formSubmit">
+        <button class="purchase" style="bottom: {{description.body.length < 4 ? '40' : '20'}}px;" formType="submit">
+          <text wx:if="{{vipStatus}}">开通记录</text>
+          <text wx:if="{{!vipStatus}}">立即开通 ¥{{price/100}}/{{validityPeriod}}天</text>
+        </button>
+      </form>
+      <view class="vip-number" wx:if="{{!vipStatus}}" style="bottom:{{description.body.length<4 ? '20' : '7'}}px;">VIP剩余名额：{{store}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 说明 -->
+  <view class="bottom-container">
+    <text>加载中</text>
+    <image src="{{illustration}}" mode="aspectFill"></image>
+  </view>
+
+</view>

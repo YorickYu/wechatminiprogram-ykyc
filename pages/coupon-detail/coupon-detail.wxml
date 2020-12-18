@@ -1,0 +1,60 @@
+<navigation id="navigationBar" title="券详情" back></navigation>
+<view class='backgroundcolor'></view>
+<view class='container'>
+  <view class='top-container'>
+    <view class='item'>
+      <view class='left-item'>券号码</view>
+      <view class='right-item'>NO.{{detail.pwd}}</view>
+    </view>
+    <view class='item'>
+      <view class='left-item'>有效期</view>
+      <view class='right-item'>{{detail.time}}</view>
+    </view>
+  </view>
+  <view class='bottom-container'>
+    <view class='item' wx:if="{{detail.cityName.length > 0}}">
+      <view class='left-item'>使用城市</view>
+      <view class='right-item'>{{detail.cityName}}</view>
+    </view>
+    <view class='item' wx:if="{{detail.cinemaName.length > 0}}">
+      <view class='left-item'>使用影院</view>
+      <view class='right-item'>{{detail.cinemaName}}</view>
+    </view>
+    <view class='item' wx:if="{{detail.hallTypeName.length > 0}}">
+      <view class='left-item'>使用影厅</view>
+      <view class='right-item'>{{detail.hallTypeName}}</view>
+    </view>
+    <view class='item' wx:if="{{detail.movieName.length > 0}}">
+      <view class='left-item'>使用影片</view>
+      <view class='right-item'>{{detail.movieName}}</view>
+    </view>
+    <view class='item' wx:if="{{detail.movieTypeName.length > 0}}">
+      <view class='left-item'>使用类型</view>
+      <view class='right-item'>{{detail.movieTypeName}}</view>
+    </view>
+    <view class='item' wx:if="{{detail.maxPrice.length > 0}}">
+      <view class='left-item'>使用价格</view>
+      <view class='right-item'>{{detail.maxPrice}}</view>
+    </view>
+    <view class='item' wx:if="{{detail.limitRule.length > 0}}">
+      <view class='left-item'>限定规则</view>
+      <view class='right-item'>{{detail.limitRule}}</view>
+    </view>
+    <view class='item' wx:if="{{detail.limitTimePeriod.length > 0}}">
+      <view class='left-item'>使用时段</view>
+      <view class='right-item'>{{detail.limitTimePeriod}}</view>
+    </view>
+    <view class='item' wx:if="{{detail.userRule.length > 0}}">
+      <view class='left-item'>使用规则</view>
+      <view class='right-item'>{{detail.userRule}}</view>
+    </view>
+    <view class='item' wx:if="{{detail.discount.length > 0}}">
+      <view class='left-item'>折扣类型</view>
+      <view class='right-item'>{{detail.discount}}</view>
+    </view>
+    <view class='item' wx:if="{{detail.deductionLimit.length > 0}}">
+      <view class='left-item'>折扣上限</view>
+      <view class='right-item'>{{detail.deductionLimit}}</view>
+    </view>
+  </view>
+</view>

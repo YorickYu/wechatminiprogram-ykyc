@@ -1,0 +1,569 @@
+.escape-view {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.faketabbar {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1000;
+  background: white;
+}
+
+.line {
+  height: 8rpx;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+.nodata-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nodata-container text {
+  color: #979797;
+  font-size: 26rpx;
+  padding: 0 50rpx;
+  text-align: center;
+}
+
+.nodata-container image {
+  width: 143rpx;
+  height: 175rpx;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  /* padding: 0 30rpx; */
+}
+
+.container .background {
+  position: absolute;
+  width: 100%;
+  height: 366rpx;
+  background-size: cover;
+}
+
+/* 顶部location区域 */
+
+.location {
+  position: relative;
+  height: 80rpx;
+  /* background-color: orange; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.city-area {
+  width: 180rpx;
+  display: flex;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.city-area .city {
+  padding-left: 4rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: bold;
+  max-width: 160rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.city-area .icon {
+  padding-left: 4rpx;
+  width: 22rpx;
+  height: 12rpx;
+}
+
+.search-area {
+  width: 500rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 30rpx;
+}
+
+.search-area .icon {
+  padding-left: 30rpx;
+  width: 34rpx;
+  height: 37rpx;
+}
+
+.search-area .holder {
+  padding-left: 30rpx;
+  color: white;
+  font-size: 28rpx;
+}
+
+/* banner 区域 */
+
+.banner {
+  /* height: 430rpx; *//* background-color: orange; */
+  position: relative;
+  text-align: center;
+  padding: 0 30rpx;
+}
+
+.swiper-area {
+  padding-top: 6rpx;
+  height: 300rpx;
+}
+
+.swiper-area .slide-image {
+  border-radius: 20rpx;
+  width: 100%;
+  height: 300rpx;
+}
+
+.cinema-area {
+  padding-top: 10rpx;
+  background-color: white;
+  /* border-radius: 20rpx; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.cinema {
+  padding-left: 5rpx;
+  display: flex;
+  flex-direction: column;
+  max-width: 370rpx;
+  /* background-color: orange; */
+}
+
+.cinema .name {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding-top: 10rpx;
+  max-width: 420rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cinema .address {
+  color: #7a7a7a;
+  display: flex;
+  align-items: center;
+  padding-top: 12rpx;
+  padding-bottom: 12rpx;
+}
+
+.cinema .address .icon {
+  width: 20rpx;
+  height: 24rpx;
+}
+
+.cinema .address .text {
+  padding-left: 12rpx;
+  font-size: 28rpx;
+}
+
+.countday-area {
+  /* background-color: red; */
+  color: #ff9600;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 10rpx;
+  max-width: 315rpx;
+}
+
+.countday-area .countday-back {
+  display: inline-block;
+  height: 70rpx;
+  width: 45rpx;
+  border-radius: 10rpx;
+  background-color: #ff9600;
+  margin: 0rpx 2rpx -5rpx;
+}
+
+.countday-area .countday-back text {
+  color: white;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 70rpx;
+  font-weight: bolder;
+}
+
+/* 立即购票区域 */
+
+.ticket {
+  position: relative;
+  /* height: 330rpx; */
+  background-color: white;
+  padding: 0 30rpx;
+}
+
+.top-container {
+  height: 145rpx;
+  /* background-color: orange; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-container .left-container {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+}
+
+.top-container .left-container .discount {
+  font-size: 34rpx;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+
+.top-container .left-container .discount text {
+  color: #d28;
+  font-size: 70rpx;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.top-container .left-container .discount image {
+  width: 36rpx;
+  height: 36rpx;
+  padding-left: 6rpx;
+}
+
+.top-container .left-container .viptime {
+  font-size: 28rpx;
+  color: #c4c4c4;
+}
+
+.top-container .left-container .labels {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: white;
+  font-size: 28rpx;
+}
+
+.top-container .left-container .labels .coupon-label {
+  background-color: #98e3fb;
+  border-radius: 20rpx;
+  padding: 0 6rpx;
+  margin-right: 10rpx;
+}
+
+.top-container .left-container .labels .score-label {
+  background-color: #d2b8fd;
+  border-radius: 20rpx;
+  padding: 0 8rpx;
+  margin-right: 10rpx;
+}
+
+.top-container .left-container .labels .discount-label {
+  background-color: #f1a6d0;
+  border-radius: 20rpx;
+  padding: 0 8rpx;
+  margin-right: 10rpx;
+}
+
+.top-container .right-container {
+  /* background-color: bisque; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20rpx;
+}
+
+.top-container .right-container .buyticket {
+  width: 210rpx;
+  height: 80rpx;
+  background-color: #d28;
+  color: white;
+  font-size: 38rpx;
+  border-radius: 40rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-container .right-container .start {
+  margin-top: 6rpx;
+  font-size: 26rpx;
+  color: #7a7a7a;
+}
+
+.top-container .right-container .start text {
+  color: black;
+}
+
+.bottom-container {
+  height: 185rpx;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-container .inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fafafa;
+  width: 290rpx;
+  height: 150rpx;
+  border-radius: 20rpx;
+  padding: 0 20rpx;
+}
+
+.bottom-container .inner-container .middletext {
+  display: flex;
+  flex-direction: column;
+  font-size: 34rpx;
+  margin-left: -10rpx;
+}
+
+.bottom-container .inner-container .middletext .leftnum {
+  color: #7a7a7a;
+  font-size: 30rpx;
+}
+
+/* 活动区域 */
+
+.activity {
+  /* background-color: blue; */
+  position: relative;
+  padding: 0 30rpx;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+}
+
+.title-container .title {
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+}
+
+.title-container .title text {
+  margin-left: 10rpx;
+  line-height: 80rpx;
+  font-weight: bold;
+}
+
+.title-container .more {
+  font-size: 28rpx;
+  line-height: 80rpx;
+  color: #7a7a7a;
+}
+
+/* 折扣列表 */
+
+.showdiscount {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+.showdiscount .guide1-image {
+  width: 215px;
+  height: 175px;
+  position: absolute;
+}
+
+.showdiscount .anchor {
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  padding-left: 6rpx;
+}
+
+.showdiscount .trangle-view {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 15rpx;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  margin-top: -8rpx;
+  margin-left: 10rpx;
+}
+
+.showdiscount .list-body {
+  background-color: white;
+  position: absolute;
+  padding: 15rpx 30rpx;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  color: #7d7d7d;
+  font-size: 26rpx;
+}
+
+.showdiscount .list-body .body-title {
+  /* position: absolute; */
+  border-radius: 30rpx;
+  height: 60rpx;
+  background-color: #fef7ee;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.showdiscount .list-body .body-title image {
+  position: relative;
+  margin-right: 10rpx;
+}
+
+.showdiscount .list-body .body-title view {
+  color: #4b3415;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.showdiscount .list-body .targetcount {
+  font-size: 36rpx;
+  padding: 0 10rpx;
+  color: #dc228a;
+}
+
+/* 广告 */
+
+.ads-container {
+  /* position: relative; */
+  position: fixed;
+  left: 0;
+  right: 0;
+  /* top: 0; */
+  bottom: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ads-container .adsimage {
+  width: 100%;
+  height: 100%;
+}
+
+.ads-container .countdown {
+  position: absolute;
+  top: 5%;
+  left: 85%;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  color: white;
+  font-size: 24rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-guide {
+  width: 101rpx;
+  height: 101rpx;
+  border-radius: 50px;
+  position: fixed;
+  line-height: 50px;
+  font-size: 25rpx;
+  color: #fff;
+  z-index: 999;
+}
+
+.user-guide image {
+  width: 101rpx;
+  height: 101rpx;
+}
+
+.guide-background {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.guide2-button {
+  position: absolute;
+  width: 210rpx;
+  height: 80rpx;
+  background-color: #d28;
+  color: white;
+  font-size: 38rpx;
+  border-radius: 40rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guide2-image1 {
+  width: 750rpx;
+  height: 848rpx;
+  position: absolute;
+}
+
+.guide2-image2 {
+  width: 750rpx;
+  height: 482rpx;
+  position: absolute;
+  bottom: -70rpx;
+}
+
+
+/* vip */
+
+.vip-container {
+  height: 180rpx;
+  background-color: #f8f8f8;
+  padding: 0 30rpx;
+  
+}
+
+.vip-container .vip-scroll-view {
+  height: 170rpx;
+  white-space: nowrap;
+}
+
+.vip-scroll-view .scroll-view-item {
+  display: inline-block;
+  height: 170rpx;
+  /* width: 690rpx; */
+  width: 100%;
+  background-color: transparent;
+}
+.vip-scroll-view .scroll-view-item image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}

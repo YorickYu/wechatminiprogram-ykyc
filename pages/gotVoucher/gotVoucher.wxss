@@ -1,0 +1,107 @@
+.voucher_top_top {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 380rpx;
+}
+
+.got_touch_img {
+  margin-top: 100rpx;
+  width: 200rpx;
+  height: 260rpx;
+}
+
+.voucher_top_mid {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 56rpx;
+  font-weight: bold;
+}
+
+.voucher_top_bottom {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  /* margin-left: 16%;
+  width: 68%;
+  height: 140rpx;
+  line-height: 55rpx; */
+  
+}
+
+.voucher_text {
+  padding: 20rpx 50rpx;
+  font-size: 35rpx;
+  border-radius: 140rpx;
+  background-color: #f8f8f8;
+  color: #7d7d7d;
+  min-width: 200rpx;
+}
+
+.line {
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  height: 130rpx;
+  border-bottom: #f8f8f8 dashed 5rpx;
+}
+
+.voucher_btm {
+  margin-left: 10%;
+  display: flex;
+  width: 80%;
+  margin-top: 100rpx;
+  height: 240rpx;
+}
+
+.btm_activity_image {
+  width: 28%;
+  display: flex;
+  height: 100%;
+}
+
+.btm_right {
+  padding-left: 22rpx;
+  width: 72%;
+  height: 100%;
+}
+
+.btm_activity_time {
+  height: 35rpx;
+  line-height: 35rpx;
+  font-size: 30rpx;
+  display: flex;
+}
+
+.img_activity_time {
+  height: 35rpx;
+  width: 35rpx;
+}
+
+.text_activity_time {
+  margin-left: 20rpx;
+  line-height: 35rpx;
+  font-size: 24rpx;
+  color: #2b2b2b;
+}
+
+.btm_activity_address {
+  margin-top: 20rpx;
+  display: flex;
+}
+
+.text_activity_address {
+  margin-left: 20rpx;
+  line-height: 35rpx;
+  font-size: 24rpx;
+  color: #2b2b2b;
+}
+
+.img_activity_address {
+  height: 35rpx;
+  width: 35rpx;
+}

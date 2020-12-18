@@ -1,0 +1,98 @@
+/* pages/order-detail-exchange/order-detail.wxss */
+page {
+  background-color: #F8F8F8;
+}
+.order-bg {
+  width: 650rpx;
+  height: auto;
+  margin: 30rpx;
+  padding: 20rpx;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+.order-bg .good-name {
+  font-size: 34rpx;
+  color: #2B2B2B;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 44rpx;
+}
+.order-bg .exchange-score {
+  font-size: 34rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.order-bg .line {
+  width: 650rpx;
+  height: 1rpx;
+  border-top: 1rpx dashed #D5D5D5;
+  margin-top:42rpx;
+}
+.order-bg .one {
+  flex-direction: row;
+  margin-top: 54rpx;
+}
+.order-bg .one .order-no_ {
+  font-size: 28rpx;
+  color: #7D7D7D;
+}
+.order-bg .one .order-no {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #7D7D7D;
+}
+.order-bg .two {
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+.order-bg .two .exchange-time_ {
+  font-size: 28rpx;
+  color: #7D7D7D;
+}
+.order-bg .two .exchange-time {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #7D7D7D;
+}
+.order-bg .three {
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+.order-bg .three .mobile-number_ {
+  font-size: 28rpx;
+  color: #7D7D7D;
+}
+.order-bg .three .mobile-number {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #7D7D7D;
+}
+.order-bg .four {
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+.order-bg .four .exchange-type_ {
+  font-size: 28rpx;
+  color: #7D7D7D;
+}
+.order-bg .four .exchange-type {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #7D7D7D;
+}
+.order-bg .five {
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+.order-bg .five .exchange-status_ {
+  font-size: 28rpx;
+  color: #7D7D7D;
+}
+.order-bg .five .exchange-status {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #8EBF26;
+}

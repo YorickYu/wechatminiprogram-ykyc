@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "navigation": "/components/navigation/navigation",
+    "activity-swiper": "/components/activity-swiper/activity-swiper"
+  }
+}

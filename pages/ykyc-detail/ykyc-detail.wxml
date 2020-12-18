@@ -1,0 +1,24 @@
+
+<navigation id="navigationBar" title="{{title}}" background="#111111" showimage="{{false}}" back></navigation>
+
+<view class='video-container' style='height: {{videoheight}}px'>
+
+  <video id="myVideo" src="{{sourcepath}}" controls="{{true}}" bindwaiting="{{true}}" autoplay="{{true}}" enable-progress-gesture="{{false}}" bindfullscreenchange="fullscreenaction" bindplay="playaction" bindpause="pauseaction" bindended="endaction" binderror='loaderror' custom-cache="{{false}}">
+    <cover-view class="controls" wx:if="{{fullscreenmode && rewardpoint>0 && !alreadyWatch && !iscomplete}}">
+      <cover-view class="time">{{wxTimerSecond}}s</cover-view>
+    </cover-view>
+  </video>
+
+  <view class="count-contaienr {{iscomplete ? 'active-color': 'unactive-color'}}" wx:if="{{rewardpoint>0 && !alreadyWatch}}">
+    <view wx:if="{{!iscomplete}}">浏览当前视频 {{wxTimerSecond}} 秒后，可获得积分奖励</view>
+    <view wx:if="{{iscomplete}}"> {{isFailed ? failMsg : m1.formate(rewardpoint)}}</view>
+  </view>
+
+</view>
+
+<wxs module="m1">
+  var mate = function(val) {
+    return '恭喜！已获得 ' + val +' 积分!'
+  }
+  module.exports.formate = mate;
+</wxs>

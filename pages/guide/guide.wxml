@@ -1,0 +1,7 @@
+
+
+<navigation id="navigationBar" title="使用规则" back></navigation>
+
+<view class="container">
+  <image class="guide" src='http://web-txpc.oss-cn-shanghai.aliyuncs.com/others/1563173579997.jpg'></image>
+</view>

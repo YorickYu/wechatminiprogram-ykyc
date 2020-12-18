@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/orderConfirm/orderConfirm",
+    "pages/time/time",
+    "pages/gotVoucher/gotVoucher",
+    "pages/pointrecord/pointrecord",
+    "pages/goods-detail/goods-detail",
+    "pages/credits-exchange/credits-exchange",
+    "pages/score/score",
+    "pages/locate/locate",
+    "pages/regist/regist",
+    "pages/already-regist/already-regist",
+    "pages/activity-list/activity-list",
+    "pages/mine/mine",
+    "pages/overdue/overdue",
+    "pages/city/city",
+    "pages/order/order",
+    "pages/order-detail/order-detail",
+    "pages/ykyc/ykyc",
+    "pages/ykyc-detail/ykyc-detail",
+    "pages/cinemaPlan/cinemaPlan",
+    "pages/new-select-seat/new-select-seat",
+    "pages/coupon/coupon",
+    "pages/coupon-detail/coupon-detail",
+    "pages/outerweb/outerweb",
+    "pages/authorize-home/authorize-home",
+    "pages/authorize/authorize",
+    "pages/order-detail-exchange/order-detail-exchange",
+    "pages/credits-exchange-success/credits-exchange-success",
+    "pages/guide/guide",
+    "pages/purchase-vip/purchase-vip",
+    "pages/purchase-vip-success/purchase-vip-success",
+    "pages/purchase-vip-list/purchase-vip-list"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#D3D3D3",
+    "selectedColor": "#C71585",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/tabbar/home-normal.png",
+        "selectedIconPath": "images/tabbar/home-selected.png"
+      },
+      {
+        "pagePath": "pages/ykyc/ykyc",
+        "text": "视频",
+        "iconPath": "images/tabbar/yky-normal.png",
+        "selectedIconPath": "images/tabbar/yky-selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/tabbar/mine-normal.png",
+        "selectedIconPath": "images/tabbar/mine-selected.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "",
+    ""
+  ]
+}

@@ -1,0 +1,85 @@
+<wxs module="m1">
+  var mate = function(val) {
+    switch (val) {
+      case 0:
+        return '审核中';
+        break;
+      case 1:
+        return '恭喜中奖';
+        break;
+      case 2:
+        return '很遗憾，未中奖';
+        break;
+      case 3:
+        return '抢券成功';
+        break;
+    }
+  }
+
+  var mate2 = function(val) {
+    switch (val) {
+      case 0:
+        return 'checking';
+        break;
+      case 1:
+        return 'check-success';
+        break;
+      case 2:
+        return 'check-fail';
+        break;
+      case 3:
+        return 'check-success';
+        break;
+    }
+  }
+  module.exports = {
+    formate: mate,
+    cssf: mate2
+  }
+</wxs>
+
+<navigation id="navigationBar" title="我参与的活动" background="{{background}}" back></navigation>
+<top-refresh id='tfresh'></top-refresh>
+
+<view wx:if="{{myActivityList.length == 0 && firstLoaded}}" class="nodata-container">
+  <image src="/images/coupon/nocoupons.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+  <text selectable="false" space="false" decode="false">
+      暂未参与活动
+  </text>
+</view>
+
+<scroll-view scroll-y style="height: {{contentheight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" wx:if="{{myActivityList.length > 0 && firstLoaded}}">
+  <view class='activity-container' wx:for="{{myActivityList}}" wx:key="{{index}}" bindtap='todetail' data-index='{{index}}'>
+    <image src="{{item.cover}}" mode="aspectFill"></image>
+    <view class='activity-right-container'>
+      <text class='activity-item-first' wx:if="{{item.lineone.length > 0}}">活动时间：{{item.lineone}}</text>
+      <text class='activity-item'>{{item.lineTwo}}</text>
+      <view class='activity-item' wx:if="{{item.status==0 && item.lineThree.length > 0}}">活动地址：{{item.lineThree}}</view>
+      <text class="coupons" wx:if="{{item.status==1}}" decode="true">兑换码：&nbsp;&nbsp;&nbsp;{{item.validCode}}</text>
+      <view class="coupons-box" wx:if="{{item.status==1}}">
+        <text class="coupons_copy" data-index="{{index}}" catchtap='copyBtn'>复制兑换码</text>
+        <view class="info-tap-container" wx:if='{{myActivityList[index].instruction.length > 0}}' catchtap='showinfo' data-index='{{index}}'>
+          <icon class='coupon-info' type="info" size="15"></icon>
+        </view>
+      </view>
+
+
+      <view class="activity_status" wx:if="{{item.status==0}}">
+        当前状态：
+        <text class="{{m1.cssf(item.checkState)}}">{{m1.formate(item.checkState)}}</text>
+      </view>
+    </view>
+
+
+
+  </view>
+
+
+</scroll-view>
+
+<view class="float-container" wx:if="{{infoon}}" catchtap='infohide'>
+  <view class="content">
+    <text class='content-title' style="text-align: center;">说明</text>
+    <text class='content-info'>{{instruction}}</text>
+  </view>
+</view>

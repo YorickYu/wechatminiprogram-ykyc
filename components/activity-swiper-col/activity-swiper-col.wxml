@@ -1,0 +1,10 @@
+<view class="col-container">
+  <block wx:for="{{banners}}" wx:key="index" wx:if='{{banners.length > 0}}'>
+    <view bindtap='click' data-index='{{index}}'>
+      <image class="slide-image def" wx:if='{{!loadingSuccess}}' src='/images/video-background.png' mode='aspectFill'></image>
+      <image class="slide-image" wx:if="{{item.poster}}" src="{{item.poster}}" mode="aspectFill" bindload='onImageLoadSuccess' />
+    </view>
+  </block>
+
+  <view class="nodate" wx:if='{{banners.length == 0}}'>暂无进行中的活动</view>
+</view>

@@ -1,0 +1,55 @@
+
+
+.content {
+  position: absolute;
+  width: 100%;
+  border-radius: 40rpx;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.content .img-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .auth-button {
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 330rpx;
+  margin-top: 25rpx;
+  color: white;
+  background-color: #dc228a;
+  border-radius: 45rpx;
+}
+
+.content .cancel-button {
+  font-size: 30rpx;
+  margin-top: 15rpx;
+  color: #11112275;
+  text-align: center;
+  /* border-bottom: 0.5rpx solid #11112275; */
+  text-decoration: underline;
+}
+
+.content .auth-button::after {
+  border: none;
+}
+
+.updatewx {
+  text-align: center;
+  color: lightgrey;
+}
+
+.infotext {
+  margin-top: 60rpx;
+  font-size: 25rpx;
+  width: 100%;
+  text-align: center;
+  color: #11112275;
+}

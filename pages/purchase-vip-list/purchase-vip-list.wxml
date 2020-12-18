@@ -1,0 +1,23 @@
+
+<navigation id="navigationBar" title="会员购买记录" back></navigation>
+
+<view class="container">
+  <block wx:for="{{vipList}}" wx:key="{{index}}">
+    <view class="cell-box">
+      <view class="box-top">
+        <view class="top-left">
+          <text class="title">{{item.memberShipName}}</text>
+          <view class="price">¥{{item.price/100}} <text class="origin-price">原价¥{{item.originalPrice/100}}</text></view>
+        </view>
+        <view class="top-right">
+          <text>开通成功</text>
+        </view>
+      </view>
+      <view class="box-bottom">
+        <text>有效期：{{item.startTime}} - {{item.endTime}}</text>
+        <text>订单编号：{{item.orderNo}}</text>
+        <text>下单时间：{{item.payTime}}</text>
+      </view>
+    </view>
+  </block>
+</view>

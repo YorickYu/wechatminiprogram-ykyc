@@ -1,0 +1,145 @@
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.poster-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 30rpx;
+  width: 100%;
+}
+
+.pos {
+  position: absolute;
+  z-index: 100;
+}
+
+.poster-container .poster-image {
+  width: 690rpx;
+  height: 460rpx;
+  border-radius: 30rpx;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.title-container .title {
+  font-size: 36rpx;
+  max-width: 75%;
+
+  /* text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; */
+}
+
+.title-container .points-cost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70rpx;
+  /* width: 135rpx; */
+}
+
+.title-container .points-cost text {
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  color: #786002;
+  line-height: 31rpx;
+}
+
+.seperate-line {
+  height: 8rpx;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+.detail_title {
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+  margin-left: 5%;
+  margin-top: 30rpx;
+  margin-bottom: 25rpx;
+}
+
+.detail_title_border {
+  height: 40rpx;
+  width: 10rpx;
+  border-radius: 5rpx;
+  background-color: #df1888;
+}
+
+.detail_title_text {
+  margin-left: 20rpx;
+  font-size: 38rpx;
+}
+
+.detail_text {
+  display: flex;
+  font-size: 30rpx;
+  line-height: 36rpx;
+  margin: 0 5% 12rpx 5%;
+  color: #7d7d7d;
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15rpx;
+}
+
+.gallery-container .gallery-item {
+  position: relative;
+  margin: 10rpx;
+  width: 690rpx;
+}
+
+.gallery-container .gallery-item .goods-image{
+  width: 690rpx;
+  height: 460rpx;
+  border-radius: 30rpx;
+}
+  
+
+
+
+
+.bottom-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 150rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+.bottom-container .bottom-detail {
+  margin-top: 20rpx;
+  width: 640rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background-color: #de188a;
+  line-height: 100rpx;
+  font-size: 35rpx;
+  text-align: center;
+  color: white;
+}
+
+.bottom-detail::after {
+  border: none;
+}

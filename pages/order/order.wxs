@@ -1,0 +1,10 @@
+var state = function (val) {
+  switch (val) {
+    case 3: return '兑换成功'; break;
+    case 4: return '已退回'; break;
+  }
+}
+
+module.exports = {
+  titleFormat: state
+}

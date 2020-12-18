@@ -1,0 +1,7 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    "navigation": "/components/navigation/navigation",
+    "coupon-item": "/components/coupon-item/coupon-item"
+  }
+}

@@ -1,0 +1,25 @@
+<!-- bar  -->
+<view class="navigation" style="height:{{height+paddingTop}}px;font-size:{{fontSize}};position:{{fixed&&'fixed'}};background: {{background}}">
+
+  <!-- 背景图片 -->
+  <image class="backgroundimage" wx:if="{{showimage}}" src="{{backgroundimage}}" style="height:{{height+paddingTop}}px;" />
+
+  <!-- back area -->
+  <view class="back" wx:if="{{back || customback}}" style="padding-top:{{paddingTop}}px;height:{{height}}px;line-height:{{height}}px;" bind:tap="navigateBack">
+    <view class="icon-fanhui"></view>
+    <view class="back-home" wx:if="{{showHomeButton}}" style="">首页</view>
+  </view>
+
+  <!-- title area -->
+  <view class="title" style="padding-top:{{paddingTop}}px;height:{{height}}px;line-height:{{height}}px;">
+    <text>{{title!='none'?title:''}}</text>
+  </view>
+</view>
+
+<!-- hold cover -->
+<view class="navigation-bar-holder" wx:if="{{fixed && show}}" style="padding-top:{{paddingTop}}px;height:{{height}}px;"></view>
+
+<!-- loading gif -->
+<view class="loadgif" wx:if="{{toprefresh}}" style="padding-top:{{paddingTop}}px;height:{{height}}px;">
+  <image class='gif' src='https://www.elks.org/history/images/loading.gif'></image>
+</view>

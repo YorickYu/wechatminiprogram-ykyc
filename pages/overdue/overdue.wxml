@@ -1,0 +1,32 @@
+<navigation id="navigationBar" title="{{title}}" background="{{background}}" back></navigation>
+<form report-submit="true" bindsubmit="formSubmit" bindreset="formReset">
+  <view class="title">{{activityTitle}}</view>
+  <view class="pic">
+    <image class="activity-img" src="{{poster}}" mode="aspectFill"></image>
+  </view>
+  <view class="timefee">
+    <view class="activity_time" wx:if="{{activityTime.length > 0}}">
+      <image class="time_img" mode="widthFix" src="../../images/activity/time.png"></image>
+      <text class="time_text">{{activityTime}}</text>
+    </view>
+    <view class="activity_fee" wx:if="{{limitMoney.length > 0}}">
+      <image class="fee_img" mode="widthFix" src="../../images/activity/fee.png"></image>
+      <text class="fee_text">{{limitMoney}}</text>
+    </view>
+  </view>
+  <view class="address" wx:if="{{address.length > 0}}">
+    <image class="address_img" mode="widthFix" src="../../images/activity/address.png"></image>
+    <text class="address_text">{{address}}
+     </text>
+  </view>
+  <view class="activity_title">
+    <view class="activity_title_border"></view>
+    <text class="activity_title_text">活动规则 :</text>
+  </view>
+  <view class="activity_space"></view>
+  <text class="activity_detail_text" wx:for="{{activityDetail}}" wx:key="{{index}}">{{item}}</text>
+  <view class="activity_button">
+    <button class="button_detail" wx:if="{{activityStatus!=1}}">{{buttonText}}</button>
+    <button class="button_detail_aa" formType="submit" wx:if="{{activityStatus==1}}">{{buttonText}}</button>
+  </view>
+</form>

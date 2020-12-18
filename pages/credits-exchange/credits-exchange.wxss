@@ -1,0 +1,110 @@
+
+.container {
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.container .banner-container {
+  width: 100%;
+  height: 220rpx; 
+  background-color: white;
+}
+
+.container .banner-container .swiper-area {
+  height: 100%;
+  width: 100%;
+}
+
+.container .banner-container .slide-image {
+  height: 100%;
+  width: 100%;
+}
+
+.container .points-container {
+  /* width: 100%; */
+  height: 95rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.container .points-container .points {
+  height: 95rpx;
+  line-height: 95rpx;
+  font-size: 30rpx;
+  color: #2b2b2b;
+  display: flex;
+}
+.container .points-container .points text {
+  font-size: 36rpx;
+  color: black;
+}
+
+.container .points-container .points .login-guide {
+  height: 66rpx;
+  color: #545454;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid black;
+}
+
+.container .points-container .points-button {
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #f1f1f1;
+  color: #545454;
+  font-size: 28rpx;
+  padding: 5rpx 10rpx;
+  border-radius: 50rpx;
+
+  display: flex;
+  align-items: center;
+}
+
+.points-button image {
+  margin-left: 12rpx;
+  margin-bottom: 4rpx;
+  height: 20rpx;
+  width: 15rpx;
+  background-size: cover;
+}
+
+.container .goodslist-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  background-color: #f1f1f1;
+  padding: 20rpx 30rpx;
+}
+
+
+.nodata-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500rpx;
+}
+
+.nodata-container text {
+  color: #979797;
+  font-size: 24rpx;
+  padding: 0 50rpx;
+  text-align: center;
+}
+
+.nodata-container image {
+  width: 150rpx;
+  height: 150rpx;
+}

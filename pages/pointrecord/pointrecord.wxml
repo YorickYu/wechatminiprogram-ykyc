@@ -1,0 +1,47 @@
+<wxs module="m1">
+    var func = function(type, pointtype) {
+      if (type == 1) {
+        if (pointtype == 4) {
+          return false;
+        }
+        return true;
+      }else {
+        return false;
+      }
+    }
+    module.exports.judge = func;
+</wxs>
+
+
+<navigation id="navigationBar" title="我的积分" back></navigation>
+<top-refresh id='tfresh'></top-refresh>
+
+<view wx:if="{{lists.length == 0 && firstLoaded}}" class="nodata-container">
+  <image src="/images/coupon/nocoupons.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" />
+  <text selectable="false" space="false" decode="false">
+      暂无积分
+  </text>
+</view>
+
+<scroll-view wx:else scroll-y style="height: {{contentheight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower">
+
+  <view class="my_record">
+    <text class="my_record_text">积分记录</text>
+  </view>
+  <block wx:for="{{lists}}" wx:key="key" wx:for-item="item" wx:for-index="index">
+    <view class="recordlist" animation="{{animationInfoData[index]}}" wx:if="{{infoShow[index]}}">
+      <view class="item_left">
+        <view class="item_left_top">
+          {{item.title}}
+        </view>
+        <view class="item_left_bottom">
+          {{item.crtTime}}
+        </view>
+      </view>
+      <view class="item_right">
+        {{m1.judge(item.type, item.pointType) ? '+' : '-'}}{{item.point}}
+      </view>
+    </view>
+  </block>
+
+</scroll-view>

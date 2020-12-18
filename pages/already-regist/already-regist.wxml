@@ -1,0 +1,8 @@
+
+<navigation id="navigationBar" title="注册手机" background="{{background}}" back></navigation>
+
+<view class='already-container'>
+  <image src="../../images/mine/regist-pass.png"></image>
+  <text class='already-pass'>已通过验证</text>
+  <text class='already-phone'>{{mobile}}</text>
+</view>
