@@ -36,7 +36,7 @@
 
 #### 总览GIF
 
-![GIF](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/gif-show.gif)
+![GIF](https://github.com/YorickYu/wechatminiprogram-ykyc/blob/main/resources/gif-show.gif)
 
 #### 获取定位权限
 
@@ -44,13 +44,15 @@
 
 封装 `components/modelview-loau` 组件
 
-![location](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/7ccffa68ebeea456a17d1079fb5d7c3.png)
+![location](https://github.com/YorickYu/wechatminiprogram-ykyc/blob/main/resources/authorize-location1.png)
+
+![location](https://github.com/YorickYu/wechatminiprogram-ykyc/blob/main/resources/authorize-location2.png)
 
 #### 新用户引导
 
-![guide1](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/a6ac85421a5b1d529a12812da5b3770.png)
+![guide1](https://github.com/YorickYu/wechatminiprogram-ykyc/blob/main/resources/guide1.png)
 
-![guide2](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/9b6b0de6dcde3241c626f0bbbeef82c.png)
+![guide2](https://github.com/YorickYu/wechatminiprogram-ykyc/blob/main/resources/guide2.png)
 
 上面两个模块，mask遮盖层覆盖全屏幕的问题。
 
@@ -68,7 +70,7 @@
 
 #### 错误页面
 
-![error](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/error-page.png)
+![error](https://github.com/YorickYu/wechatminiprogram-ykyc/blob/main/resources/error-page.png)
 
 #### 授权页面/弹窗
 
@@ -76,7 +78,7 @@
 
 封装 `components/authorize-home` 组件（页面）
 
-![authorize](https://yloopdaed-public.oss-cn-shanghai.aliyuncs.com/ykyc-opensource/5ed08e040700953d77e339643bec922.png)
+![authorize](https://github.com/YorickYu/wechatminiprogram-ykyc/blob/main/resources/authorize-wx.png)
 
 #### 其他
 
